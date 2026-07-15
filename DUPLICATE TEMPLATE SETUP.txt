@@ -1,0 +1,48 @@
+Step 1: Copy and rename the folder
+
+Find your existing project folder on your computer
+Copy the entire folder (Ctrl+C or right-click → Copy)
+Paste it wherever you want
+Rename the copied folder (e.g., my-new-project)
+
+
+Step 2: Clean up the copied folder
+Open the renamed folder and:
+
+Delete the .git folder (removes connection to old repo)
+
+Show hidden files first:
+
+Windows: View → Show → Hidden items
+Mac: Press Cmd + Shift + .
+
+
+Find and delete the .git folder
+
+
+Delete node_modules folder (optional, saves space)
+Update package.json (optional but recommended):
+
+json   {
+     "name": "my-new-project",  // Change this
+     "version": "1.0.0"
+   }
+Step 3: Create new GitHub repository
+
+Go to github.com
+Click "+" (top right) → "New repository"
+Name it (same as your folder name is easiest)
+Don't check any boxes (no README, no .gitignore, nothing)
+Click "Create repository"
+
+
+Step 4: Connect and push to new repo
+Open terminal/command prompt in your new project folder and run:
+
+
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/rodget109/YOUR-NEW-REPO-NAME.git
+git push -u origin main

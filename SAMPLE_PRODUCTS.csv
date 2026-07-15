@@ -1,0 +1,21 @@
+id,name,category,price,image,description,popular
+1,Margherita Pizza,Pizza,12.99,assets/images/food/pepperoni.png,Classic tomato sauce mozzarella fresh basil,TRUE
+2,Pepperoni Pizza,Pizza,14.99,assets/images/food/burgerpizza.png,Loaded with pepperoni and mozzarella,TRUE
+3,BBQ Chicken Pizza,Pizza,15.99,assets/images/food/pepperoni.png,BBQ sauce grilled chicken red onions,FALSE
+4,Veggie Supreme,Pizza,13.99,assets/images/food/pepperoni.png,Mushrooms peppers olives onions,FALSE
+5,Classic Burger,Burgers,9.99,assets/images/food/pepperoni.png,Beef patty lettuce tomato cheese,TRUE
+6,Bacon Cheeseburger,Burgers,11.99,assets/images/food/pepperoni.png,Double beef bacon cheddar cheese,TRUE
+7,Veggie Burger,Burgers,10.99,assets/images/food/pepperoni.png,Plant-based patty avocado sprouts,FALSE
+8,Chicken Burger,Burgers,10.49,assets/images/food/pepperoni.png,Grilled chicken breast mayo lettuce,FALSE
+9,Spaghetti Carbonara,Pasta,13.99,assets/images/food/pepperoni.png,Creamy sauce bacon parmesan,TRUE
+10,Penne Arrabiata,Pasta,12.49,assets/images/food/pepperoni.png,Spicy tomato sauce garlic herbs,FALSE
+11,Fettuccine Alfredo,Pasta,13.49,assets/images/food/pepperoni.png,Rich cream sauce parmesan cheese,TRUE
+12,Lasagna,Pasta,14.99,assets/images/food/pepperoni.png,Layered pasta beef ricotta mozzarella,FALSE
+13,Caesar Salad,Salads,8.99,assets/images/food/pepperoni.png,Romaine croutons parmesan caesar dressing,TRUE
+14,Greek Salad,Salads,9.49,assets/images/food/pepperoni.png,Feta olives cucumber tomatoes,FALSE
+15,Caprese Salad,Salads,10.99,assets/images/food/pepperoni.png,Fresh mozzarella tomatoes basil,FALSE
+16,Coca Cola,Drinks,2.99,assets/images/food/pepperoni.png,Classic cola 500ml,TRUE
+17,Fresh Lemonade,Drinks,3.49,assets/images/food/pepperoni.png,Freshly squeezed lemon juice,TRUE
+18,Iced Tea,Drinks,2.99,assets/images/food/pepperoni.png,Peach iced tea,FALSE
+19,Chocolate Cake,Desserts,6.99,assets/images/food/pepperoni.png,Rich chocolate layer cake,TRUE
+20,Tiramisu,Desserts,7.49,assets/images/food/pepperoni.png,Italian coffee-flavored dessert,TRUE
