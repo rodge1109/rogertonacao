@@ -501,6 +501,10 @@ export default function RestaurantApp() {
           -webkit-backdrop-filter: saturate(180%) blur(20px);
         }
 
+        /* === HERO BACKGROUND === */
+        .hero-bg-image { background-position: 85% center; }
+        @media (min-width: 768px) { .hero-bg-image { background-position: center; } }
+
         /* === LEGACY COMPAT (keep appointment form, admin, etc. working) === */
         .btn-animated { transition: all 0.3s ease; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
@@ -2580,11 +2584,11 @@ function HomePage({ setCurrentPage }) {
       >
         {/* Background photo — full bleed */}
         <div
+          className="hero-bg-image"
           style={{
             position: 'absolute', inset: 0,
             backgroundImage: "url('/assets/images/hero/hero-bg.png')",
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
           }}
         />
 
