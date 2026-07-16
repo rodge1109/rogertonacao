@@ -2561,14 +2561,14 @@ function HomePage({ setCurrentPage }) {
           }}
         />
 
-        {/* Content — responsive alignment */}
+        {/* Content — left-aligned */}
         <div
-          className="relative z-10 w-full max-w-[1200px] mx-auto px-6 md:px-12 pt-32 pb-20 text-center md:text-left"
+          className="relative z-10 w-full max-w-[1200px] mx-auto px-6 md:px-12 pt-32 pb-20 text-left"
         >
-          <div className="mx-auto md:mx-0 max-w-[500px]">
+          <div className="max-w-[500px]">
 
             {/* Status & Location badges */}
-            <div className="animate-fadeUp flex flex-wrap justify-center md:justify-start gap-3 mb-6">
+            <div className="animate-fadeUp flex flex-wrap justify-start gap-3 mb-6">
               <span style={{
                 display: 'inline-flex', alignItems: 'center', gap: '8px',
                 padding: '6px 14px', borderRadius: '9999px',
@@ -2611,7 +2611,7 @@ function HomePage({ setCurrentPage }) {
             </p>
 
             {/* Two pill CTAs */}
-            <div className="flex flex-wrap justify-center md:justify-start gap-4">
+            <div className="flex flex-wrap justify-start gap-4">
               <button
                 onClick={() => document.getElementById('projects-section')?.scrollIntoView({ behavior: 'smooth' })}
                 className="btn-primary btn-apple"
