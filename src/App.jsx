@@ -502,7 +502,7 @@ export default function RestaurantApp() {
         }
 
         /* === HERO BACKGROUND === */
-        .hero-bg-image { background-position: 85% center; }
+        .hero-bg-image { background-position: 70% center; }
         @media (min-width: 768px) { .hero-bg-image { background-position: center; } }
 
         /* === LEGACY COMPAT (keep appointment form, admin, etc. working) === */
@@ -2561,21 +2561,14 @@ function HomePage({ setCurrentPage }) {
           }}
         />
 
-        {/* Content — left-aligned */}
+        {/* Content — responsive alignment */}
         <div
-          style={{
-            position: 'relative', zIndex: 10,
-            width: '100%',
-            maxWidth: '1200px',
-            margin: '0 auto',
-            padding: '120px 48px 80px',
-            textAlign: 'left',
-          }}
+          className="relative z-10 w-full max-w-[1200px] mx-auto px-6 md:px-12 pt-32 pb-20 text-center md:text-left"
         >
-          <div style={{ maxWidth: '500px' }}>
+          <div className="mx-auto md:mx-0 max-w-[500px]">
 
             {/* Status & Location badges */}
-            <div className="animate-fadeUp" style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginBottom: '24px' }}>
+            <div className="animate-fadeUp flex flex-wrap justify-center md:justify-start gap-3 mb-6">
               <span style={{
                 display: 'inline-flex', alignItems: 'center', gap: '8px',
                 padding: '6px 14px', borderRadius: '9999px',
@@ -2618,7 +2611,7 @@ function HomePage({ setCurrentPage }) {
             </p>
 
             {/* Two pill CTAs */}
-            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+            <div className="flex flex-wrap justify-center md:justify-start gap-4">
               <button
                 onClick={() => document.getElementById('projects-section')?.scrollIntoView({ behavior: 'smooth' })}
                 className="btn-primary btn-apple"
