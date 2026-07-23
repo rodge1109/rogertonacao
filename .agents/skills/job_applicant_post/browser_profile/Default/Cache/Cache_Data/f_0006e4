@@ -1,0 +1,3279 @@
+
+
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- begin Convert Experiences code. Be aware this can't be loaded async or as a preload. Experiments need to
+        interrupt rendering to avoid a screen flash between old/new views. -->
+            <script type="text/javascript" src="//cdn-4.convertexperiments.com/v1/js/10042981-10044140.js?environment=production"></script>
+        <!-- end Convert Experiences code -->
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" sizes="57x57" href="/webfiles/1770241131432/favicon/dice/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/webfiles/1770241131432/favicon/dice/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/webfiles/1770241131432/favicon/dice/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/webfiles/1770241131432/favicon/dice/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/webfiles/1770241131432/favicon/dice/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/webfiles/1770241131432/favicon/dice/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/webfiles/1770241131432/favicon/dice/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/webfiles/1770241131432/favicon/dice/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/webfiles/1770241131432/favicon/dice/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/webfiles/1770241131432/favicon/dice/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="194x194" href="/webfiles/1770241131432/favicon/dice/favicon-194x194.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/webfiles/1770241131432/favicon/dice/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/webfiles/1770241131432/favicon/dice/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/webfiles/1770241131432/favicon/dice/favicon-16x16.png">
+        <link rel="manifest" href="https://www.dice.com/manifest.json">
+        <link rel="mask-icon" href="/webfiles/1770241131432/favicon/dice/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="/webfiles/1770241131432/favicon/dice/favicon.ico">
+        <meta name="apple-mobile-web-app-title" content="Dice">
+        <meta name="application-name" content="Dice">
+        <meta name="msapplication-TileColor" content="#cc0000">
+        <meta name="msapplication-TileImage" content="/webfiles/1770241131432/favicon/dice/mstile-144x144.png">
+        <meta name="msapplication-config" content="/browserconfig.xml">
+        <meta name="theme-color" content="#cc0000">
+        <!-- include funnel envy before GTM based on implementation without component -->
+        <!-- end funnel envy include -->
+
+        <!-- include funnel envy based on component before GTM -->
+        <!-- end of include -->
+    <!-- Google Tag Manager (Google Tag Gateway) -->
+    <script>
+        (function(w,d,s,l,i){
+            w[l]=w[l]||[];
+            w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+            var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),
+                dl=l!='dataLayer'?'&l='+l:'';
+            j.async=true;
+            j.src='/vc7eq8/?id='+i+dl; 
+            f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-WLPMJGK');
+    </script>
+    <!-- End Google Tag Manager -->
+    <link rel="stylesheet" href="https://d1l8sqvw5snhqo.cloudfront.net/css/3.3.4/dice-bs4-theme.min.css" />
+        <link rel="stylesheet" type="text/css" href="/webfiles/1770241131432/css/dice/dice-layout.css" />
+        <!-- include funnel envy in Head based on implementation without component -->
+        <!-- end funnel envy include -->
+<link rel="stylesheet" href="https://unpkg.prod.design-prod.dhiaws.com/dhi-snake-eyes@1-stable/dist/dhi-snake-eyes/dhi-snake-eyes.css" type="text/css"/>
+<link rel="stylesheet" href="/binaries/content/assets/dice/home-page-redesign/seds-btn.css" type="text/css"/>
+<style type="text/css">
+/*<![CDATA[*/
+
+        #sn-190434949 .container {
+            max-width: 1400px;
+
+        }
+
+        #sn-190434949 .container .dice-subnav .showSearchMagnifier {
+            cursor: pointer;
+        }
+
+        #sn-190434949 .container .dice-subnav .magnifierSize {
+            font-size: 24px;
+        }
+
+        #sn-190434949 .container .dice-subnav .centerContent {
+            height: 46px;
+            background: #FFFFFF;
+            display: flex;
+            justify-content: center;
+            margin: .5rem 0 .5rem 0;
+        }
+
+        #sn-190434949 .container .dice-subnav .menu-icon::before {
+            color: #000000;
+            font-weight: 700;
+        }
+
+        #sn-190434949 .container .dice-subnav .hideSearchMagnifier {
+            display: none
+        }
+
+        #sn-190434949 .container .dice-subnav .hideSearchBox {
+            display: none;
+        }
+
+        #sn-190434949 .container .dice-subnav .hideCategoryList {
+            display: none;
+        }
+
+        #sn-190434949 .container .dice-subnav .row {
+            border-bottom: 1px solid #D4D2CE;
+            min-height: 56px;
+            align-content: center;
+        }
+
+        #sn-190434949 .container .dice-subnav .line-label {
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            color: #28494F;
+        }
+
+        #sn-190434949 .container .dice-subnav .line-label:hover {
+            text-decoration: underline;
+        }
+
+        #sn-190434949 .container.dice-subnav .navbar-collapse {
+            min-height: 56px;
+            padding-top: 0;
+            margin-top: 0;
+            border-top: none;
+            transition: none;
+        }
+
+        #sn-190434949 .container .dice-subnav .navbar-toggler[aria-expanded="true"] > span.icon-arrow-67 {
+            display: none;
+        }
+
+        #sn-190434949 .container .dice-subnav .navbar-toggler[aria-expanded="false"] > span.icon-arrow-67 {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        #sn-190434949 .container .dice-subnav .navbar-toggler[aria-expanded="true"] > span.icon-arrow-68 {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        #sn-190434949 .container .dice-subnav .navbar-toggler[aria-expanded="false"] > span.icon-arrow-68 {
+            display: none;
+        }
+
+        #sn-190434949 .container .dice-subnav ul.navbar-nav {
+            margin-left: 20px;
+        }
+
+        #sn-190434949 .container .dice-subnav nav.navbar li.nav-item:hover {
+            text-decoration: underline;
+            color: #123B5A;
+        }
+
+        #sn-190434949 .container .dice-subnav nav.navbar li.nav-item {
+            padding-top: 16px;
+        }
+
+        #sn-190434949 .container .dice-subnav nav.navbar li {
+            display: block;
+            position: relative;
+        }
+
+        #sn-190434949 .container .dice-subnav .nav-item a {
+            font-size: 14px;
+            color: #2B2927;
+            margin-right: 16px;
+        }
+
+        #sn-190434949 .container .dice-subnav .nav-item a.category-selected {
+            text-decoration: underline;
+            font-weight: 700;
+            color: #071927;
+        }
+
+        #sn-190434949 .container .dice-subnav hr {
+            border-top: 1px solid #D4D2CE;
+            width: 500%;
+            margin-left: -100px;
+            margin-bottom: 0;
+        }
+
+        @media (min-width: 992px) {
+            #sn-190434949 .container .dice-subnav .localAlignment {
+                align-items: center;
+            }
+
+            #sn-190434949 .container .dice-subnav .line-label {
+                padding-top: 4px;
+            }
+
+            #sn-190434949 .container .dice-subnav .line-label:hover {
+                text-decoration: none;
+            }
+
+            #sn-190434949 .container .dice-subnav .navbar {
+                padding: 0 1rem;
+            }
+
+            #sn-190434949 .container .dice-subnav .navbar-collapse {
+                min-height: 64px;
+                padding-top: 0;
+                padding-bottom: 0;
+                margin-top: 0;
+                border-top: none;
+            }
+
+            #sn-190434949 .container .dice-subnav nav.navbar li.nav-item {
+                padding-top: 0;
+            }
+
+            #sn-190434949 .container .dice-subnav hr {
+                display: none;
+            }
+        }
+    
+/*]]>*/
+</style>
+<link rel="stylesheet" href="/webfiles/1770241131432/css/dice/career-advice-layout.css" type="text/css"/>
+<style>
+/*<![CDATA[*/
+
+
+        .testimonial-310314045 {
+            padding: 40px 56px;
+            font-family: 'IBM Plex Sans';
+            font-style: normal;
+            align-items: center;
+        }
+
+        .testimonial-310314045 .testimonial-item {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            word-wrap: break-word;
+            text-align: center;
+            align-items: center;
+        }
+
+        .testimonial-310314045 blockquote.testimonial-quote-style {
+            margin: 0 0 0;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            margin-inline-start: 0;
+            margin-inline-end: 0;
+        }
+
+        .testimonial-310314045 blockquote.testimonial-quote-style p {
+            font-size: 16px;
+            line-height: 1.5;
+            font-weight: 500;
+            color: #FFFFFF;
+        }
+
+        .testimonial-310314045 .attribution-text {
+            padding-top: 1rem;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+            color: #FFFFFF;
+        }
+
+        @media (min-width: 768px) {
+            .testimonial-310314045 {
+                padding:80px 56px;
+            }
+
+            .testimonial-310314045 blockquote.testimonial-quote-style p {
+                font-size: 24px;
+                line-height:32px;
+            }
+
+            .testimonial-310314045 .attribution-text {
+                font-size: 20px;
+                line-height:30px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .testimonial-310314045 {
+                padding:80px 56px;
+            }
+            .testimonial-310314045 .testimonial-content {
+                max-width: 960px;
+                justify-content: center;
+            }
+        }
+
+        @media (min-width: 1200px) {
+
+        }
+    
+/*]]>*/
+</style>
+<script src="/webfiles/1770241131432/js/dice/ionicon-scrolling-document-list.js"></script>
+<link rel="stylesheet" href="/webfiles/1770241131432/css/dice/ionicon-scrolling-document-list.css" type="text/css"/>
+<style>
+/*<![CDATA[*/
+
+            .scrollContent .slidenav li navbutton{
+                color: #FFFFFF;
+            }
+            .scrollContent .slidenav li navbutton ion-icon {
+                width: 20px;
+                height: 20px;
+                padding: 8px;
+            }
+        
+/*]]>*/
+</style>
+<script>
+//<![CDATA[
+
+            document.addEventListener("DOMContentLoaded", function (event) {
+                var testimonialList = document.querySelectorAll('*[id^="carousel-"]');
+                testimonialList.forEach(function (item) {
+                    var id = item.getAttribute("id");
+                    (new carouselInstance()).init({
+                        id: item.getAttribute("id"),
+                        slidenav: true,
+                        animate: true,
+                        startAnimated: true
+                    })
+                    item.classList.remove('d-none');
+                });
+            });
+        
+//]]>
+</script>
+<meta name="google-site-verification" content="0cp2yKWs8uh4rUaF5QRJSgHCO2a35z0yW2GKbCb1GkI"/>
+<meta name="google-site-verification" content="BxFwEoc8u_KNOQTwdt3c0GGrIxD3SWzhqji3AHh3omQ"/>
+<link as="script" rel="preload" href="https://cdn.shareaholic.net/assets/pub/shareaholic.js"/>
+<meta name="shareaholic:site_id" content="5b3c39e0c04501cff97663f3d2320d9f"/>
+<script async="async" src="https://cdn.shareaholic.net/assets/pub/shareaholic.js" data-cfasync="false"></script>
+<style type="text/css">
+/*<![CDATA[*/
+
+        #site-op-763136222.seds .seds-container {
+            display: block;
+            padding: 3rem 1.5rem;
+        }
+        #site-op-763136222.seds .section-wrapper {
+            position: relative;
+            margin: auto;
+         }
+        #site-op-763136222.seds .unauth-job-list .site-op-list-item {
+            display: list-item;
+            list-style-type: none;
+        }
+        #site-op-763136222.seds .unauth-job-list {
+            column-count: 4;
+            column-width: 250px;
+        }
+        #site-op-763136222.seds .site-op-location h2.linkhub-title {
+            color: var(--Colors-zinc-900, #18181b);
+            text-align: center;
+            font-family: Degular, serif;
+            font-size: 2.5rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 3rem;
+            max-width: 57.5rem;
+            align-self: stretch;
+            margin-bottom: 0;
+        }
+        #site-op-763136222.seds .site-op-location .nav {
+            display: flex;
+            padding: 3rem .5rem 2rem .5rem;
+            justify-content: center;
+            align-items: flex-start;
+            align-content: flex-start;
+            gap: .5rem;
+            align-self: stretch;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+            border-bottom: 1px solid #b1b1b1;
+        }
+        #site-op-763136222.seds .site-op-location .nav-item {
+            display: flex;
+            padding: .375rem 1rem;
+            margin-bottom: unset;
+            flex-direction: column;
+            border-radius: 1.5rem;
+            background: #fff;
+            color: var(--Colors-zinc-700, #3f3f46);
+            border: 1px solid var(--Colors-zinc-300, #d4d4d8);
+            background: var(--Colors-base-white, #FFF);
+            text-decoration: none;
+            -webkit-transition: background-color 1s ease-out;
+            -moz-transition: background-color 1s ease-out;
+            -o-transition: background-color 1s ease-out;
+            transition: background-color 1s ease-out;
+        }
+        #site-op-763136222.seds .site-op-location a.nav-item {
+            font-weight: 500;
+        }
+        #site-op-763136222.seds .site-op-location .nav-item:hover {
+            border: 1px solid var(--Colors-zinc-300, #d4d4d8);
+            background: var(--Colors-cyan-50, #ecfeff);
+        }
+
+        #site-op-763136222.seds .nav-tabs .nav-item.show .nav-link,
+        #site-op-763136222.seds .nav-tabs .nav-link.active {
+            color: var(--Colors-cyan-700, #fff);
+            background-color: #0e7490;
+            border-color: var(--Colors-cyan-700, #0e7490);
+        }
+        #site-op-763136222.seds .site-op-location .site-op-list-item {
+            height: var(--Spacing-6, 1.5rem);
+            text-align: left;
+            color: var(--Colors-cyan-700, #0e7490);
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.5rem;
+            display: list-item;
+            list-style-type: none;
+        }
+        #site-op-763136222.seds .site-op-location .tab-content {
+            list-style-type: none;
+        }
+        #site-op-763136222.seds .site-op-list-item a {
+            padding: .625rem 0;
+            color: #0e7490;
+            text-decoration: none;
+            background-color: transparent;
+        }
+        #site-op-763136222.seds .site-op-list-item a:hover {
+            text-decoration: underline;
+        }
+        #site-op-763136222.seds .linkhub-buttons-container {
+            min-width: 100%;
+            text-align: center;
+            padding: 48px 0 0 0;
+            }
+        #site-op-763136222.seds .linkhub-buttons-container ion-icon {
+           width: 1.5rem;
+           height: 1.5rem;
+        }
+        #site-op-763136222.seds .linkhub-buttons-container a.linkhub-btn-left {
+            display: block;
+            padding: 12px 32px;
+            color: var(--Colors-cyan-700, #0E7490);
+            background-color: #FFF;
+            border: 1px solid var(--Colors-cyan-700, #0E7490);
+            border-radius: 50px;
+            text-decoration: none;
+            -webkit-transition: background-color 1s ease-out;
+            -moz-transition: background-color 1s ease-out;
+            -o-transition: background-color 1s ease-out;
+            transition: background-color 1s ease-out;
+        }
+        #site-op-763136222.seds .linkhub-buttons-container a.linkhub-btn-left:hover {
+             color: #FFF;
+             background-color: var(--Colors-cyan-700, #0E7490);
+             border: 1px solid #FFF;
+        }
+
+        #site-op-763136222.seds .linkhub-buttons-container a.linkhub-btn-left-inverse {
+             padding: 12px 32px;
+             color: #FFF;
+             background-color: var(--Colors-cyan-700, #0E7490);
+             border: 1px solid #FFF;
+             border-radius: 50px;
+             text-decoration: none;
+        }
+        #site-op-763136222.seds .linkhub-buttons-container a.linkhub-btn-left-inverse:hover {
+             color: #FFF;
+             background-color: var(--Colors-cyan-700, #0E7490);
+             border: 1px solid #FFF;
+        }
+        #site-op-763136222.seds .btn-align {
+            display: inline-flex;
+        }
+       @media (min-width: 768px) {
+            #site-op-763136222.seds .seds-container {
+                padding: 4.5rem 1.5rem;
+            }
+            #site-op-763136222.seds .site-op-location h2.linkhub-title {
+                font-size: 3rem;
+                line-height: 3.6rem;
+            }
+
+            #site-op-763136222.seds .site-op-list-item a {
+                font-size: 1rem;
+            }
+            #site-op-763136222.seds .linkhub-btn-left{
+                display: inline-flex;
+           }
+           #site-op-763136222.seds .linkhub-buttons-container {
+                display: inline-flex;
+                justify-content: center;
+                gap: 1rem;
+            }
+       }
+       @media (min-width: 992px) {
+            #site-op-763136222.seds .site-op-location h2.linkhub-title {
+                margin: 0 auto;
+            }
+        }
+    
+/*]]>*/
+</style>
+<style>
+/*<![CDATA[*/
+
+
+        .testimonial-604255266 {
+            padding: 40px 56px;
+            font-family: 'IBM Plex Sans';
+            font-style: normal;
+            align-items: center;
+        }
+
+        .testimonial-604255266 .testimonial-item {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            word-wrap: break-word;
+            text-align: center;
+            align-items: center;
+        }
+
+        .testimonial-604255266 blockquote.testimonial-quote-style {
+            margin: 0 0 0;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            margin-inline-start: 0;
+            margin-inline-end: 0;
+        }
+
+        .testimonial-604255266 blockquote.testimonial-quote-style p {
+            font-size: 16px;
+            line-height: 1.5;
+            font-weight: 500;
+            color: #FFFFFF;
+        }
+
+        .testimonial-604255266 .attribution-text {
+            padding-top: 1rem;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+            color: #FFFFFF;
+        }
+
+        @media (min-width: 768px) {
+            .testimonial-604255266 {
+                padding:80px 56px;
+            }
+
+            .testimonial-604255266 blockquote.testimonial-quote-style p {
+                font-size: 24px;
+                line-height:32px;
+            }
+
+            .testimonial-604255266 .attribution-text {
+                font-size: 20px;
+                line-height:30px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .testimonial-604255266 {
+                padding:80px 56px;
+            }
+            .testimonial-604255266 .testimonial-content {
+                max-width: 960px;
+                justify-content: center;
+            }
+        }
+
+        @media (min-width: 1200px) {
+
+        }
+    
+/*]]>*/
+</style>
+<style>
+/*<![CDATA[*/
+
+        #cta-190334269.seds .badgeButton {
+            margin-bottom: 1.5rem;
+        }
+        #cta-190334269.seds .cta-content-wrapper {
+            position: relative;
+            margin: auto;
+            text-align: center;
+            padding-top: 48px;
+        }
+        #cta-190334269.seds .badgeButton .badgeButtonText {
+            background-color: var(--Colors-red-50, #FEF2F2);
+            color: var(--Colors-red-800, #991B1B);
+            font-family: "IBM Plex Sans";
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 28px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            opacity: 0.8;
+            gap: 8px;
+        }
+        #cta-190334269.seds h2.title {
+            font-family: Degular;
+            font-size: 40px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 120%;
+            padding-bottom: 24px;
+            margin-bottom: 0;
+        }
+        #cta-190334269.seds .description p {
+            font-family: "IBM Plex Sans";
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 32px;
+        }
+        #cta-190334269.seds .ctaImageWrapper {
+            text-align: center;
+        }
+        #cta-190334269.seds .ctaImageWrapper img{
+            aspect-ratio: 1 /1;
+            max-height: 312px;
+            max-width: 312px;
+        }
+        #cta-190334269.seds .cta-buttons-container {
+            min-width: 100%;
+            padding: 48px 0 0 0;
+        }
+       #cta-190334269.seds .cta-btn-left{
+            display: block;
+            padding: 12px 32px;
+            color: var(--Colors-cyan-700, #0E7490);;
+            background-color: var(--Colors-base-white, #FFFFFF);
+            border: 1px solid var(--Colors-cyan-700, #0E7490);;
+            border-radius: 50px;
+            text-decoration: none;
+            -webkit-transition: background-color 1s ease-out;
+            -moz-transition: background-color 1s ease-out;
+            -o-transition: background-color 1s ease-out;
+            transition: background-color 1s ease-out;
+       }
+       #cta-190334269.seds .cta-btn-left:hover {
+             color: var(--Colors-base-white, #FFFFFF);
+             background-color: var(--Colors-cyan-700, #0E7490);;
+             border: 1px solid var(--Colors-base-white, #FFFFFF);
+       }
+
+       #cta-190334269.seds .cta-btn-left-inverse {
+             padding: 12px 32px;
+             color: var(--Colors-base-white, #FFFFFF);
+             background-color: var(--Colors-cyan-700, #0E7490);;
+             border: 1px solid var(--Colors-base-white, #FFFFFF);
+             border-radius: 50px;
+             text-decoration: none;
+       }
+       #cta-190334269.seds .cta-btn-left-inverse:hover {
+             color: var(--Colors-base-white, #FFFFFF);
+             background-color: var(--Colors-cyan-700, #0E7490);;
+             border: 1px solid var(--Colors-base-white, #FFFFFF);
+       }
+       #cta-190334269.seds .cta-btn-right{
+            display: block;
+            padding: 12px 32px;
+            color: var(--Colors-cyan-700, #0E7490);;
+            background-color: var(--Colors-base-white, #FFFFFF);
+            border: 1px solid var(--Colors-cyan-700, #0E7490);;
+            border-radius: 50px;
+            text-decoration: none;
+            -webkit-transition: background-color 1s ease-out;
+            -moz-transition: background-color 1s ease-out;
+            -o-transition: background-color 1s ease-out;
+            transition: background-color 1s ease-out;
+       }
+       #cta-190334269.seds .cta-btn-right:hover {
+             color: var(--Colors-base-white, #FFFFFF);
+             background-color: var(--Colors-cyan-700, #0E7490);;
+             border: 1px solid var(--Colors-base-white, #FFFFFF);
+       }
+       #cta-190334269.seds .cta-btn-right-inverse {
+             padding: 12px 32px;
+             color: var(--Colors-base-white, #FFFFFF);
+             background-color: var(--Colors-cyan-700, #0E7490);;
+             border: 1px solid var(--Colors-base-white, #FFFFFF);
+             border-radius: 50px;
+             text-decoration: none;
+       }
+       #cta-190334269.seds .cta-btn-right-inverse:hover {
+             color: var(--Colors-base-white, #FFFFFF);
+             background-color: var(--Colors-cyan-700, #0E7490);;
+             border: 1px solid var(--Colors-base-white, #FFFFFF);
+       }
+       #cta-190334269.seds .cta-link-right{
+            display: block;
+            color: var(--Colors-cyan-700, #0E7490);;
+            text-decoration: none;
+            padding-top: 12px;
+       }
+       #cta-190334269.seds .cta-link-right:hover {
+             color: var(--Colors-base-white, #FFFFFF);
+       }
+        #cta-190334269.seds .cta-link-left{
+            display: block;
+            color: var(--Colors-cyan-700, #0E7490);;
+            text-decoration: none;
+            padding-top: 12px;
+       }
+       #cta-190334269.seds .cta-link-left:hover {
+             color: var(--Colors-base-white, #FFFFFF);
+       }
+
+    @media (min-width: 768px) {
+        #cta-190334269.seds .cta-content-wrapper {
+            margin: auto;
+            max-width: 800px;
+        }
+        #cta-190334269.seds h2.title {
+            font-size: 48px;
+        }
+        #cta-190334269.seds .ctaImageWrapper img{
+            max-height: 400px;
+            max-width: 400px;
+        }
+        #cta-190334269.seds .cta-btn-left{
+            display: inline-flex;
+       }
+        #cta-190334269.seds .cta-btn-right{
+            display: inline-flex;
+       }
+        #cta-190334269.seds .cta-buttons-container {
+        display: inline-flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+    }
+
+        @media (min-width: 1200px) {
+            #cta-190334269.seds .cta-buttons-container {
+            display: inline-flex;
+        }
+            #cta-190334269.seds .cta-btn-left{
+            display: inline-flex;
+        }
+            #cta-190334269.seds .vertical-alignment {
+            margin: auto 0;
+            display: flex;
+            align-items: center;
+        }
+            #cta-190334269.seds .ctaImageWrapper img{
+            max-height: 500px;
+            max-width: 500px;
+        }
+            #cta-190334269.seds .cta-content-wrapper {
+            margin: revert;
+            max-width: 100%;
+            text-align: left;
+        }
+            #cta-190334269.seds .cta-buttons-container {
+            display: inline-flex;
+            justify-content: unset;
+        }
+        }
+    }
+    
+/*]]>*/
+</style>
+<style>
+/*<![CDATA[*/
+
+        #multiple-type-1118504688.seds .seds-btn a:not([class*=seds-button]){
+                color: var(--Colors-zinc-900, #18181B);
+           }
+        #multiple-type-1118504688.seds .seds-btn a:not([class*=seds-button]){
+                color: var(--Colors-zinc-900, #18181B);
+           }
+        #multiple-type-1118504688.seds .container-wrapper {
+            padding-top: 48px;
+            padding-bottom: 48px;
+            color: var(--Colors-zinc-900, #18181B);
+            font-family: "IBM Plex Sans";
+        }
+        #multiple-type-1118504688.seds .cta-content-wrapper {
+            position: relative;
+            margin: auto;
+            text-align: center;
+        }
+        #multiple-type-1118504688.seds h2.title {
+             font-family: Degular;
+             font-size: 40px;
+             font-style: normal;
+             font-weight: 700;
+             line-height: 120%;
+        }
+        #multiple-type-1118504688.seds .cta-description p {
+             text-align: center;
+             font-family: "IBM Plex Sans";
+             font-size: 20px;
+             font-style: normal;
+             font-weight: 400;
+             line-height: 28px;
+             margin-bottom: 0;
+        }
+        #multiple-type-1118504688.seds .mobile-category-display {
+            display: none;
+        }
+        #multiple-type-1118504688.seds .category-display-header {
+            display: none;
+        }        
+        #multiple-type-1118504688.seds .cta-buttons-container {
+            display: flex;
+            height: 48px;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            border-radius: 50px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+        #multiple-type-1118504688.seds .cta-btn-left{
+            display: block;
+            padding: 12px 32px;
+            color: #0E7490;
+            background-color: #FFFFFF;
+            border: 1px solid #0E7490;
+            border-radius: 50px;
+            text-decoration: none;
+            width: 100%;
+            -webkit-transition: background-color 1s ease-out;
+            -moz-transition: background-color 1s ease-out;
+            -o-transition: background-color 1s ease-out;
+            transition: background-color 1s ease-out;
+        }
+        #multiple-type-1118504688.seds .cta-btn-left:hover {
+             color: #FFFFFF;
+             background-color: #0E7490;
+             border: 1px solid #FFFFFF;
+             cursor: pointer;
+        }
+        #multiple-type-1118504688.seds .featured-doc-wrapper {
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid var(--Colors-zinc-100, #F4F4F5);
+            background: var(--base-white, #FFF);
+            box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.10), 0px 1px 3px 0px rgba(0, 0, 0, 0.10);
+            margin-bottom: 16px;
+        }
+        #multiple-type-1118504688.seds  .featured-doc-wrapper:hover {
+            cursor: pointer;
+            box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, 0.10), 0px 4px 6px -1px rgba(0, 0, 0, 0.10);
+        }
+        #multiple-type-1118504688.seds .featured-doc-wrapper img.featured-doc {
+             max-width: 100%;
+        }
+        #multiple-type-1118504688.seds  .featured-doc-wrapper .featured-doc-title a {
+            text-decoration: none;
+            color: var(--Colors-zinc-900, #18181B);
+        }
+         #multiple-type-1118504688.seds  .featured-doc-wrapper:hover .featured-doc-title a {
+            text-decoration: underline;
+        }
+        #multiple-type-1118504688.seds .featured-doc-wrapper .featured-doc {
+            border-radius: 8px;
+        }
+        #multiple-type-1118504688.seds .featured-doc-wrapper .featured-doc-title {
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 24px;
+        }
+         #multiple-type-1118504688.seds .featured-doc-wrapper .featured-doc-title a:hover {
+            text-decoration: underline;
+         }
+        #multiple-type-1118504688.seds .featured-doc-wrapper .featured-doc-title a:visited {
+            color: var(--Colors-zinc-900, #18181B);
+        }
+        #multiple-type-1118504688.seds .featured-doc-wrapper .featured-doc-description {
+            display: none;
+        }
+        #multiple-type-1118504688.seds .featured-doc-wrapper .featured-doc-description p {
+            display: none;
+        }
+
+        #multiple-type-1118504688.seds .mobile-tile-display {
+            display: block;
+         }
+        #multiple-type-1118504688.seds .desktop-tile-display {
+            display: none;
+         }
+        #multiple-type-1118504688.seds .tile {
+            background: var(--base-white, #FFF);
+            padding: 1rem;
+            height: 100%;
+            border: 1px solid var(--Colors-zinc-100, #F4F4F5);
+            border-radius: 8px;
+            box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.10), 0px 1px 3px 0px rgba(0, 0, 0, 0.10);
+            margin-bottom: 16px;
+        }
+        #multiple-type-1118504688.seds  .tile:hover {
+            cursor: pointer;
+            box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, 0.10), 0px 4px 6px -1px rgba(0, 0, 0, 0.10);
+        }
+        #multiple-type-1118504688.seds .tile:hover .item-title a{
+            text-decoration: underline;
+        }
+        #multiple-type-1118504688.seds .tile .item-title {
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 24px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* number of lines to show */
+            -webkit-box-orient: vertical;
+            min-height: 72px;
+        }
+        #multiple-type-1118504688.seds .tile .item-title a {
+            color: #2B2927;
+            text-decoration: none;
+        }
+         #multiple-type-1118504688.seds .tile .item-title a:hover {
+            text-decoration: underline;
+        }
+        #multiple-type-1118504688.seds .tile .item-text {
+            display: none;
+         }
+        #multiple-type-1118504688.seds .tile .item-img-wrapper {
+            border-radius: 8px;
+            width: 100%;
+        }
+        #multiple-type-1118504688.seds .tile .item-img-wrapper img,
+        #multiple-type-1118504688.seds .tile .item-img-wrapper .embed-responsive {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+       @media (min-width: 768px) {
+           #multiple-type-1118504688.seds .cta-content-wrapper {
+                margin: auto;
+                max-width: 800px;
+                padding-bottom: 48px;
+            }
+           #multiple-type-1118504688.seds h2.title {
+                font-family: Degular;
+                font-size: 48px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 120%
+           }        
+           #multiple-type-1118504688.seds .cta-description p {
+                font-size: 24px;
+                line-height: 32px;
+           }
+           #multiple-type-1118504688.seds .mobile-category-display {
+                display: block;
+           }        
+           #multiple-type-1118504688.seds .category-display-header {
+                display: block;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 28px;
+                padding-top: 48px;
+                padding-bottom: 24px;
+           }        
+           #multiple-type-1118504688.seds .category-display-wrapper {
+               display: inline-block;
+           }
+           #multiple-type-1118504688.seds .category-button {
+                color: var(--Colors-zinc-900, #18181B);
+                padding: 8px 12px;
+                align-items: center;
+                margin-right: 12px;
+                border-radius: 8px;
+                border: 1px solid var(--Colors-zinc-400, #A1A1AA);
+                background: var(--Colors-base-white, #FFF);
+                margin-bottom: 12px;
+                -webkit-transition: background-color 1s ease-out;
+                -moz-transition: background-color 1s ease-out;
+                -o-transition: background-color 1s ease-out;
+                transition: background-color 1s ease-out;
+           }
+           #multiple-type-1118504688.seds .seds-btn a:visited{
+                color: var(--Colors-zinc-900, #18181B);
+           }
+           #multiple-type-1118504688.seds .seds-btn .span a:visited{
+                color: var(--Colors-zinc-900, #18181B);
+           }
+           #multiple-type-1118504688.seds .seds-btn .span a {
+                color: var(--Colors-zinc-900, #18181B);
+           }
+           #multiple-type-1118504688.seds .seds-btn a {
+                text-decoration: none;
+           }
+           #multiple-type-1118504688.seds .seds-btn:hover  {
+                text-decoration: none;
+                background: #E4E4E7;
+                cursor: pointer;
+           }
+           #multiple-type-1118504688.seds .seds-btn .categoryButtonText {
+               font-size: 16px;
+               font-style: normal;
+               font-weight: 500;
+               line-height: 24px;
+           }
+           #multiple-type-1118504688.seds .cta-buttons-container {
+                display: inline-flex;
+                padding: 0;
+                margin-bottom: 0;
+           }
+           #multiple-type-1118504688.seds .cta-btn-left{
+                width: revert;
+            }
+           #multiple-type-1118504688.seds .featured-doc-wrapper {
+                margin-bottom: 24px;
+            }
+           #multiple-type-1118504688.seds .featured-doc-wrapper .featured-doc-title {
+                font-style: normal;
+                font-weight: 600;
+                line-height: 36px;
+           }
+           #multiple-type-1118504688.seds .featured-doc-wrapper .featured-doc-description {
+                display: block;
+                padding-top: 16px;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                line-clamp: 4;
+                display: -webkit-box;
+                -webkit-line-clamp: 4; /* number of lines to show */
+                -webkit-box-orient: vertical;
+           }
+           #multiple-type-1118504688.seds .featured-doc-wrapper .featured-doc-description p {
+               display: block;
+           }
+           #multiple-type-1118504688.seds .mobile-tile-display {
+                display: none;
+           }
+           #multiple-type-1118504688.seds .desktop-tile-display {
+                display: block;
+           }
+           #multiple-type-1118504688.seds .tile {
+                margin-bottom: 0;
+                padding: 24px 24px 32px 24px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 24px;
+           }
+           #multiple-type-1118504688.seds .tile .item-title {
+                font-size: 24px;
+                line-height: 32px;
+                min-height: 96px;
+                padding-top: 24px;
+           }
+           #multiple-type-1118504688.seds .tile .item-text {
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
+                display: block;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 3; /* number of lines to show */
+                -webkit-box-orient: vertical;
+                height: 72px;
+
+           }
+           #multiple-type-1118504688.seds .tile .item-img-wrapper img,
+           #multiple-type-1118504688.seds .tile .item-img-wrapper .embed-responsive {
+                height: 160px;
+           }
+       }
+
+       @media (min-width: 1200px) {
+           #multiple-type-1118504688.seds .cta-alignment {
+                margin: auto 0;
+                display: flex;
+           }
+           #multiple-type-1118504688.seds .cta-content-wrapper {
+                margin: revert;
+                max-width: 100%;
+                text-align: left;
+                padding-bottom: 0;
+           }
+           #multiple-type-1118504688.seds .cta-description p {
+               text-align: left;
+           }
+           #multiple-type-1118504688.seds .tile .item-img-wrapper img,
+           #multiple-type-1118504688.seds .tile .item-img-wrapper .embed-responsive {
+               height: 140px;
+           }
+       }
+    
+/*]]>*/
+</style>
+<style>
+/*<![CDATA[*/
+
+        #cta-1191944099.seds .badgeButton {
+            margin-bottom: 1.5rem;
+        }
+        #cta-1191944099.seds .cta-content-wrapper {
+            position: relative;
+            margin: auto;
+            text-align: center;
+            padding-top: 48px;
+        }
+        #cta-1191944099.seds .badgeButton .badgeButtonText {
+            background-color: var(--Colors-cyan-50, #ECFEFF);;
+            color: #155E75;
+            font-family: "IBM Plex Sans";
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 28px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            opacity: 0.8;
+            gap: 8px;
+        }
+        #cta-1191944099.seds h2.title {
+            font-family: Degular;
+            font-size: 40px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 120%;
+            padding-bottom: 24px;
+            margin-bottom: 0;
+        }
+        #cta-1191944099.seds .description p {
+            font-family: "IBM Plex Sans";
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 32px;
+        }
+        #cta-1191944099.seds .ctaImageWrapper {
+            text-align: center;
+        }
+        #cta-1191944099.seds .ctaImageWrapper img{
+            aspect-ratio: 1 /1;
+            max-height: 312px;
+            max-width: 312px;
+        }
+        #cta-1191944099.seds .cta-buttons-container {
+            min-width: 100%;
+            padding: 48px 0 0 0;
+        }
+       #cta-1191944099.seds .cta-btn-left{
+            display: block;
+            padding: 12px 32px;
+            color: var(--Colors-cyan-700, #0E7490);
+            background-color: var(--Colors-base-white, #FFFFFF);
+            border: 1px solid var(--Colors-cyan-700, #0E7490);
+            border-radius: 50px;
+            text-decoration: none;
+            -webkit-transition: background-color 1s ease-out;
+            -moz-transition: background-color 1s ease-out;
+            -o-transition: background-color 1s ease-out;
+            transition: background-color 1s ease-out;
+       }
+       #cta-1191944099.seds .cta-btn-left:hover {
+             color: var(--Colors-base-white, #FFFFFF);
+             background-color: var(--Colors-cyan-700, #0E7490);
+             border: 1px solid var(--Colors-base-white, #FFFFFF);
+       }
+
+       #cta-1191944099.seds .cta-btn-left-inverse {
+             padding: 12px 32px;
+             color: var(--Colors-base-white, #FFFFFF);
+             background-color: var(--Colors-cyan-700, #0E7490);
+             border: 1px solid var(--Colors-base-white, #FFFFFF);
+             border-radius: 50px;
+             text-decoration: none;
+       }
+       #cta-1191944099.seds .cta-btn-left-inverse:hover {
+             color: var(--Colors-base-white, #FFFFFF);
+             background-color: var(--Colors-cyan-700, #0E7490);
+             border: 1px solid var(--Colors-base-white, #FFFFFF);
+       }
+       #cta-1191944099.seds .cta-btn-right{
+            display: block;
+            padding: 12px 32px;
+            color: #BE3432;
+            background-color: #FFFFFF;
+            border: 1px solid #BE3432;
+            border-radius: 50px;
+            text-decoration: none;
+            -webkit-transition: background-color 1s ease-out;
+            -moz-transition: background-color 1s ease-out;
+            -o-transition: background-color 1s ease-out;
+            transition: background-color 1s ease-out;
+       }
+       #cta-1191944099.seds .cta-btn-right:hover {
+             color: #FFFFFF;
+             background-color: #BE3432;
+             border: 1px solid #FFFFFF;
+       }
+       #cta-1191944099.seds .cta-btn-right-inverse {
+             padding: 12px 32px;
+             color: #FFFFFF;
+             background-color: #BE3432;
+             border: 1px solid #FFFFFF;
+             border-radius: 50px;
+             text-decoration: none;
+       }
+       #cta-1191944099.seds .cta-btn-right-inverse:hover {
+             color: #FFFFFF;
+             background-color: #BE3432;
+             border: 1px solid #FFFFFF;
+       }
+       #cta-1191944099.seds .cta-link-right{
+            display: block;
+            color: #BE3432;
+            text-decoration: none;
+            padding-top: 12px;
+       }
+       #cta-1191944099.seds .cta-link-right:hover {
+             color: #FFFFFF;
+       }
+        #cta-1191944099.seds .cta-link-left{
+            display: block;
+            color: var(--Colors-cyan-700, #0E7490);
+            text-decoration: none;
+            padding-top: 12px;
+       }
+       #cta-1191944099.seds .cta-link-left:hover {
+             color: var(--Colors-base-white, #FFFFFF);
+       }
+
+    @media (min-width: 768px) {
+        #cta-1191944099.seds .cta-content-wrapper {
+            margin: auto;
+            max-width: 800px;
+        }
+        #cta-1191944099.seds h2.title {
+            font-size: 48px;
+        }
+        #cta-1191944099.seds .ctaImageWrapper img{
+            max-height: 400px;
+            max-width: 400px;
+        }
+        #cta-1191944099.seds .cta-btn-left{
+            display: inline-flex;
+       }
+        #cta-1191944099.seds .cta-btn-right{
+            display: inline-flex;
+       }
+        #cta-1191944099.seds .cta-buttons-container {
+        display: inline-flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+    }
+
+        @media (min-width: 1200px) {
+            #cta-1191944099.seds .cta-buttons-container {
+            display: inline-flex;
+        }
+            #cta-1191944099.seds .cta-btn-left{
+            display: inline-flex;
+        }
+            #cta-1191944099.seds .vertical-alignment {
+            margin: auto 0;
+            display: flex;
+            align-items: center;
+        }
+            #cta-1191944099.seds .ctaImageWrapper img{
+            max-height: 500px;
+            max-width: 500px;
+        }
+            #cta-1191944099.seds .cta-content-wrapper {
+            margin: revert;
+            max-width: 100%;
+            text-align: left;
+        }
+            #cta-1191944099.seds .cta-buttons-container {
+            display: inline-flex;
+            justify-content: unset;
+        }
+        }
+    }
+    
+/*]]>*/
+</style>
+<style>
+/*<![CDATA[*/
+
+        #card-grid-1103087216.seds .seds-container {
+            padding: 0;
+        }
+        #card-grid-1103087216.seds .component-title {
+                color: #FFFFFF;
+            text-align: center;
+            /* Degular-40/Bold */
+            font-family: Degular;
+            font-size: 40px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 120%;  /* 48px */
+        }
+        #card-grid-1103087216.seds .stats-title {
+            text-align: center;
+            font-family: Degular;
+            font-size: 56px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 100%;
+            white-space: nowrap;
+        }
+        #card-grid-1103087216.seds .stats-subcopy{
+            text-align: center;
+            /* text-xl / font-normal */
+            font-family: "IBM Plex Sans";
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 28px;
+            padding: .5rem 2rem 0 2rem;
+        }
+        #card-grid-1103087216.seds .cardsetInnerWrapper {
+            padding: 48px 24px;
+        }
+        #card-grid-1103087216.seds .cardsetOuterWrapper {
+                background-color: #083344;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 0;
+        }
+        @media (min-width: 768px) {
+            #card-grid-1103087216.seds .seds-container {
+                padding: 0 1.5rem;
+            }
+            #card-grid-1103087216.seds .component-title {
+                text-align: center;
+                font-size: 48px;
+                line-height: 120%; ; /* 57.6px */
+            }
+            #card-grid-1103087216.seds .stats-title {
+                font-size: 72px;
+                line-height: 120%;
+            }
+             #card-grid-1103087216.seds .stats-subcopy{
+                padding: .25rem 2rem 0 2rem;
+            }
+            #card-grid-1103087216.seds .cardsetInnerWrapper {
+                padding: 72px 24px;
+            }
+            #card-grid-1103087216.seds .cardsetOuterWrapper {
+                border-radius: 9px;
+            }
+        }
+        @media (min-width: 1200px) {
+            #card-grid-1103087216.seds .component-title {
+                text-align: start;
+            }
+            #card-grid-1103087216.seds .stats-title {
+                font-size: 72px;
+            }
+            #card-grid-1103087216.seds .stats-subcopy{
+                padding: .25rem 0 0 0;
+            }
+            #card-grid-1103087216.seds .cardsetInnerWrapper {
+                padding: 72px 48px;
+            }
+        }
+        
+/*]]>*/
+</style>
+<script>
+//<![CDATA[
+
+        window.googletag = window.googletag || {cmd: []};
+        googletag.cmd.push(function() {
+        googletag.setAdIframeTitle("Partner Banner Advertisement 0");
+        googletag
+            .defineSlot('/4140/Dice/Homepage_logo', [[125, 125]], 'div-gpt-ad-134677207-0')
+            .setCollapseEmptyDiv(true)
+        .addService(googletag.pubads()
+        );
+        googletag.setAdIframeTitle("Partner Banner Advertisement 1");
+        googletag
+            .defineSlot('/4140/Dice/Homepage_logo2', [[125, 125]], 'div-gpt-ad-134677207-1')
+            .setCollapseEmptyDiv(true)
+        .addService(googletag.pubads()
+        );
+        googletag.setAdIframeTitle("Partner Banner Advertisement 2");
+        googletag
+            .defineSlot('/4140/Dice/Homepage_logo3', [[125, 125]], 'div-gpt-ad-134677207-2')
+            .setCollapseEmptyDiv(true)
+        .addService(googletag.pubads()
+        );
+        googletag.setAdIframeTitle("Partner Banner Advertisement 3");
+        googletag
+            .defineSlot('/4140/Dice/Homepage_logo4', [[125, 125]], 'div-gpt-ad-134677207-3')
+            .setCollapseEmptyDiv(true)
+        .addService(googletag.pubads()
+        );
+        googletag.setAdIframeTitle("Partner Banner Advertisement 4");
+        googletag
+            .defineSlot('/4140/Dice/Homepage_logo5', [[125, 125]], 'div-gpt-ad-134677207-4')
+            .setCollapseEmptyDiv(true)
+        .addService(googletag.pubads()
+        );
+        googletag.setAdIframeTitle("Partner Banner Advertisement 5");
+        googletag
+            .defineSlot('/4140/Dice/Homepage_logo6', [[125, 125]], 'div-gpt-ad-134677207-5')
+            .setCollapseEmptyDiv(true)
+        .addService(googletag.pubads()
+        );
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    
+//]]>
+</script>
+<style>
+/*<![CDATA[*/
+
+    .partner-banner-ad-div {
+        width: 100%;
+        padding-bottom: 56px;
+    }
+    .partner-banner-ad-div h2 {
+        width: 90%;
+        margin-bottom: 40px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 30px;
+        letter-spacing: 0em;
+    }
+    .partner-banner-ad-div .ad-row-wrapper {
+        justify-content: center;
+        width: fit-content;
+        gap: 8px;
+    }
+    .partner-banner-ad-div .partner-banner-slot {
+        display: flex;
+        height: 150px;
+        width: 150px;
+        border: 1px solid #D4D2CE;  /* border requested by users to be used in prod */
+        border-radius: 8px;
+    }
+    .partner-banner-ad-div .partner-banner-slot>div {
+        margin: auto;
+    }
+
+    .adzoom {
+        transition: transform .2s; /* Animation */
+    }
+    .adzoom:hover {
+        transform: scale(1.05);
+    }
+
+    @media (min-width: 768px) {
+        .partner-banner-ad-div .ad-row-wrapper {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .partner-banner-ad-div .ad-row-wrapper {
+            gap: 24px;
+        }
+    }
+
+/*]]>*/
+</style>
+<style>
+/*<![CDATA[*/
+
+        .job-search-hero-wrapper {
+            background-color: #083344;
+            color: #fff;
+            font-family: "IBM Plex Sans";
+            font-style: normal;
+        }
+        .job-search-hero-b {
+            display:flex;
+            flex-direction:row;
+            padding: 32px 24px 48px 24px;
+            max-width: 1500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .job-search-hero-b .desktop-image {
+            display: none;
+        }
+        .job-search-hero-b .desktop-image img {
+            max-width:100%;
+            max-height:100%;
+            position:relative;
+            top:50%;
+            transform:translateY(-50%);
+        }
+        .job-search-hero-b .rightside-wrapper {
+            width: 100%;
+        }
+        .job-search-hero-b .mobile-image {
+            display: none;
+        }
+        .job-search-hero-b .mobile-image img {
+            max-width:100%;
+            max-height:100%;
+            position:relative;
+            top:50%;
+            transform:translateY(-50%);
+        }
+        .job-search-hero-b .mobile-top-wrapper {
+            display: flex;
+        }
+        .job-search-hero-b .titles-wrapper {
+            margin-bottom: 32px;
+            width: 100%;
+        }
+        .job-search-hero-b .titles-wrapper .title h1 {
+            padding-bottom: 16px;
+            text-align: center;
+            font-family: Degular;
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 120%;
+        }
+        .job-search-hero-b .titles-wrapper .subtitle {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 32px;
+        }
+        .job-search-hero-b .jobsearch-wrapper {
+            background-color: rgba(0, 0, 0, 0.30);
+            border-radius: 1rem;
+            padding: 25px;
+            margin-bottom: 26px;
+        }
+        .job-search-hero-b .jobsearch-title {
+            padding-bottom: 24px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 32px;
+        }
+        .job-search-hero-b .cta-wrapper {
+            color: var(--Colors-zinc-900, #18181B);
+            background: var(--Colors-cyan-50, #ECFEFF);
+            border-radius: 8px;
+            padding: 24px;
+            text-align: center;
+        }
+        .job-search-hero-b .cta-wrapper .title {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 32px;
+            padding-bottom: 10px;
+        }
+        .job-search-hero-b .cta-wrapper .description {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+        }
+        .job-search-hero-b .cta-wrapper .icon-image {
+            display: none;
+        }
+        .job-search-hero-b .cta-wrapper .cta-button-wrapper {
+            display: flex;
+            padding-top: 24px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+        }
+        .job-search-hero-b .cta-wrapper .cta-button-wrapper button {
+            display: flex;
+            height: 48px;
+            padding: 10px 32px;
+            justify-content: center;
+            align-items: center;
+            align-self: center;
+            border-radius: 50px;
+            border: 1px solid var(--Colors-cyan-700, #0E7490);
+            background: var(--Colors-base-white, #FFF);
+            color: var(--Colors-cyan-700, #0E7490);
+            text-align: center;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 24px;
+            min-width: 290px;
+        }
+        .job-search-hero-b .cta-wrapper .cta-button-wrapper button:hover,
+        .job-search-hero-b .cta-wrapper .cta-button-wrapper button:focus {
+            background-color: #ecfeff;
+        }
+
+        @media (min-width: 768px) {
+            .job-search-hero-b {
+                padding: 24px 24px 48px 24px;
+            }
+            .job-search-hero-b .mobile-image {
+                min-height: 370px;
+                margin-bottom: 32px;
+                display: block;
+            }
+            .job-search-hero-b .rightside-wrapper .titles-wrapper {
+                    padding-left: 48px;
+                    padding-top: 64px;
+                display: flex;
+                align-items: center;
+            }
+            .job-search-hero-b .titles-wrapper .title h1 {
+                padding-bottom: 16px;
+                font-size: 48px;
+                text-align: start;
+            }
+            .job-search-hero-b .titles-wrapper .subtitle {
+                padding-bottom: 20px;
+                font-size: 30px;
+                line-height: 36px;
+                text-align: start;
+            }
+            .job-search-hero-b .jobsearch-title {
+                text-align: start;
+            }
+            .job-search-hero-b .cta-wrapper {
+                display: flex;
+                text-align: start;
+            }
+            .job-search-hero-b .cta-wrapper .icon-image {
+                display: inline-block;
+                padding-right: 16px;
+            }
+            .job-search-hero-b .cta-wrapper .icon-image img {
+                width: 80px;
+                position:relative;
+                top:50%;
+                transform:translateY(-50%);
+            }
+            .job-search-hero-b .cta-wrapper .cta-text-wrapper {
+                display: inline-block;
+                /*width:50%;*/
+                margin-bottom: -10px;
+            }
+            .job-search-hero-b .cta-wrapper .cta-button-wrapper {
+                display: inline-block;
+                min-width: fit-content;
+                padding: 0;
+                display: flex;
+                flex-direction: row;
+                justify-content: end;
+                align-self: unset;
+                margin-left: auto;
+            }
+            .job-search-hero-b .cta-wrapper .cta-button-wrapper button {
+                align-self: unset;
+                width: unset;
+                max-width: unset;
+                min-width: 178px;
+            }
+            .job-search-hero-b .cta-wrapper  {
+                flex-wrap: wrap;
+                row-gap: 28px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .job-search-hero-b .jobsearch-wrapper, .job-search-hero-b .cta-wrapper  {
+                max-width: 992px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .job-search-hero-b .titles-wrapper .title h1 {
+                font-size: 56px;
+            }
+            .job-search-hero-b .titles-wrapper .subtitle {
+                font-size: 36px;
+                line-height: 40px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .job-search-hero-b {
+                padding: 42px 24px 48px 24px;
+            }
+            .job-search-hero-b .desktop-image {
+                display: block;
+                width: 40%; 
+            }
+            .job-search-hero-b .mobile-image {
+                display: none;
+            }
+            .job-search-hero-b .rightside-wrapper {
+                padding-left: 48px;
+            }
+            .job-search-hero-b .rightside-wrapper .titles-wrapper {
+                padding-left: unset;
+                padding-top: unset;
+            }
+            .job-search-hero-b .rightside-wrapper .center-vertical {
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .job-search-hero-b .titles-wrapper .title h1 {
+                font-size: 72px;
+                line-height: 120%;
+            }
+            .job-search-hero-b .titles-wrapper .subtitle {
+                font-size: 36px;
+                line-height: 40px;
+            }
+            .job-search-hero-b .jobsearch-wrapper, .job-search-hero-b .cta-wrapper  {
+                max-width: unset;
+                margin-left: unset;
+                margin-right: unset;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .job-search-hero-b .desktop-image {
+                width: 45%; 
+            }
+        }
+
+        @media (min-width: 1600px) {
+            .job-search-hero-b .cta-wrapper  {
+                flex-wrap: unset;
+            }
+            .job-search-hero-b .desktop-image {
+                width: 60%; 
+            }
+        }
+    
+/*]]>*/
+</style>
+<link rel="stylesheet" href="/binaries/content/assets/dice/homepage/hero-job-search-2024-04-26.css" type="text/css"/>
+<script type="application/ld+json">
+//<![CDATA[
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "@id": "https://www.dice.com",
+  "name": "Dice.com",
+  "description": "Job search and career services website for jobseekers, recruiters and employers.",
+  "logo": "https://www.dice.com/binaries/content/gallery/dice/icons/dice-logo.svg",
+  "url": "https://www.dice.com",
+  "telephone": "1-800-979-3423",
+  "sameAs": ["https://en.wikipedia.org/wiki/Dice.com",
+      "https://www.crunchbase.com/organization/dice-com",
+      "https://www.linkedin.com/company/dice",
+      "https://www.facebook.com/dice",
+      "https://www.facebook.com/DiceforEmployers",
+      "https://x.com/dicedotcom",
+      "https://x.com/dice4employers",
+      "https://www.instagram.com/dicedotcom",
+      "https://www.youtube.com/Dice",
+      "https://www.tiktok.com/@dicetechjobs",
+      "https://www.twitch.tv/dicetechjobs",
+      "https://www.threads.net/@dicedotcom",
+      "https://www.reddit.com/user/Dice_Tech_Careers"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "6465 Greenwood Plaza Blvd",
+    "addressLocality": "Centennial",
+    "addressRegion": "Colorado",
+    "postalCode": "80111",
+    "addressCountry": "United States"
+  },
+  "parentOrganization": "DHI Group, Inc."
+}
+//]]>
+</script>
+<title>Find Tech Jobs | Advance Your Tech Career | Job Search on Dice.com</title>
+<meta name="description" content="Search 70,000+ job openings from tech&apos;s hottest employers. Salary estimations, career path tips and Insights to make your next career move the right one."/>
+<link rel="canonical" href="https://www.dice.com"/>
+<link rel="stylesheet" href="https://unpkg.prod.design-prod.dhiaws.com/dhi-snake-eyes@1-stable/dist/dhi-snake-eyes/dhi-snake-eyes.css"/>
+        <!-- include funnel envy snippets based on component at bottom of head -->
+<link crossorigin="anonymous" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <!-- end of include snippet based on component -->
+    </head>
+    <body>
+    
+    <!-- Google Tag Manager (noscript, Google Tag Gateway) -->
+    <noscript>
+        <iframe src="/vc7eq8/ns.html?id=GTM-WLPMJGK"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <script>
+        window.fraudElement = window.fraudElement || {};
+        window.fraudElement.beaconKey = "446c19b1eb";
+        window.fraudElement.peopleId = "";
+        window.fraudElement.sessionId = "";
+        window.fraudElement.emulatedSeeker = "false";
+    </script>
+    <script defer="defer" type="text/javascript" src="/webfiles/1770241131432/js/dice/vendor-fraud-tracking.js"></script>
+
+
+    <div class="layout-main-content-wrapper">
+        <div class="d-none" id="dismissableComponentAboveNavigation"></div>
+
+    <div>
+                <div>
+                    <dice-smart-header></dice-smart-header>
+
+
+                </div>
+                <div>
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+                <div>
+                    
+
+                </div>
+                <div>
+                    
+
+                </div>
+    </div>
+        <div class="d-none" id="dismissableComponentBelowNavigation"></div>
+
+    <div>
+                <div>
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+                <div>
+                    
+<div class="job-search-hero-wrapper">
+    <div class="job-search-hero-b">
+        <div class="desktop-image" >
+            <img loading="lazy" src="/binaries/medium/content/gallery/dice/home-page-redesign/hero/fe-hero-image-desktop.png" alt="Hero image" />
+        </div>
+        <div class="rightside-wrapper">
+            <div class="center-vertical">
+                <div class="mobile-top-wrapper">
+                    <div class="mobile-image">
+                        <img loading="lazy" src="/binaries/small/content/gallery/dice/home-page-redesign/hero/fe-hero-image-mobile.png" alt="Hero image" />
+                    </div>
+                    <div class="titles-wrapper">
+                        <div>
+                            <div class="title">
+        <h1>AI Skills. Bigger Chances. <span style="color: #22D3EE">Better Jobs.</span></h1>
+                            </div>
+                            <h2 class="subtitle">
+<p>With 73% of tech job postings now requiring AI skills, Dice gives your expertise the competitive edge it deserves.</p>
+
+<p>&nbsp;</p>                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="jobsearch-wrapper">
+                    <div class="jobsearch-title">
+                        Start your <span style="color: #22D3EE">job search</span>
+                    </div>
+                    <div class="jobsearch-widget">
+    <div>
+        <script src="/webfiles/1770241131432/js/dhi/utils.js"></script>
+        <script type="application/javascript">
+            window.dhiJobSearch = {
+                inputs: {"locale":"en_US","language":"en","country":"US","defaultCurrencyCode":"USD","brand":"dice","environment":"prod"},
+                messages: {
+                    "appliedFiltersHeader"
+            :
+            "Filter Results",
+                    "appliedRibbon"
+            :
+            "applied",
+                    "clearAllFacetsLink"
+            :
+            "Clear",
+                    "contactUs"
+            :
+            "contact us",
+                    "errorMsg"
+            :
+            "We apologize, the page you are trying to reach is currently unavailable.",
+                    "googleMapsApiKey"
+            :
+            "AIzaSyDOZzW7cyckuHQP9K_xxm-qUSS_E_1AJE0",
+                    "googleMapsVersion"
+            :
+            "3.61",
+                    "ifYouContinue"
+            :
+            "If you continue to experience this error",
+                    "jobAlertLabel"
+            :
+            "Label",
+                    "jobAlertLabelPlaceholder"
+            :
+            "Label your search",
+                    "jobAlertPlaceholder"
+            :
+            "Enter your email address",
+                    "jobAlertSaveAsNew"
+            :
+            "Save as new job alert.",
+                    "jobAlertSaveButtonText"
+            :
+            "Email Jobs",
+                    "jobAlertSaveNewButtonText"
+            :
+            "Save New Alert",
+                    "jobAlertSuccess"
+            :
+            "Success!  We will e-mail you jobs related to this search.",
+                    "jobAlertText_1"
+            :
+            "Email me jobs for this search",
+                    "jobAlertText_2"
+            :
+            "We receive over 1,000 new job postings a day.",
+                    "jobAlertUpdateButtonText"
+            :
+            "Update Job Alert",
+                    "jobsCountPlural"
+            :
+            "Jobs",
+                    "jobsCountSingular"
+            :
+            "Job",
+                    "jobsPerPage"
+            :
+            "Jobs per page",
+                    "missingJobDocParam"
+            :
+            "Non-disclosed",
+                    "noJobResults"
+            :
+            "We could not find any jobs matching your criteria.  Please try (TBD)",
+                    "oopsMsg"
+            :
+            "Oops, it appears we\'ve encountered an error.",
+                    "pageTitle"
+            :
+            "Job Search",
+                    "please"
+            :
+            "please",
+                    "recommendedSearches"
+            :
+            "Locations",
+                    "returnHomeButtonText"
+            :
+            "Return Home",
+                    "searchJobsButtonText"
+            :
+            "Search Jobs",
+                    "searchLocationPlaceholder"
+            :
+            "Location",
+                    "searchTermPlaceholder"
+            :
+            "Job title, skills or company",
+                    "selectAllFacetsLink"
+            :
+            "All",
+                    "sponsoredRibbon"
+            :
+            "sponsored",
+            }};
+            dhi.utils.mergeRecursive(window.dhiJobSearch, window.ads);
+        </script>
+        <dhi-job-search-bar inputs-var="dhiJobSearch">Loading...</dhi-job-search-bar>
+            
+        <script type="text/javascript">
+            (function() {
+                // only load polyfill if bs4 theme is not loaded
+                var isBs4Loaded = document.querySelector('link[href*="dice-bs4-theme"]');
+                if(!isBs4Loaded) {
+                    var link = document.createElement('link');
+                    link.type = 'text/css';
+                    link.rel = 'stylesheet';
+                    link.href = 'https://d1l8sqvw5snhqo.cloudfront.net/css/3.3.4/dice-bs4-theme.min.css';
+                    document.body.appendChild(link);
+                }
+            })();
+        </script>
+    
+            <script type="text/javascript">
+                function loadCss() {
+                    const link = document.createElement("link");
+                    link.type = "text/css";
+                        link.rel = "stylesheet";
+                        link.href = "https://job-search-dice-search-bar.dhishrdsvcprod.dhiaws.com/styles.69166b074e2b889f.css?v=1768431256348";
+                    document.getElementsByTagName("head")[0].appendChild(link);
+                }
+                loadCss();
+            </script>
+        <!-- SCRIPTS_BODY -->
+
+        <script>
+            (function (window) {
+                window.DHI_JS_DICE_SEARCH_BAR_VERSION = '2026.01.14.c2137';
+            })(window);
+        </script>
+
+        <!-- SCRIPTS_BODY_END --><script src="https://job-search-dice-search-bar.dhishrdsvcprod.dhiaws.com/config/environment.js?v=1768431256348"></script><script src="https://job-search-dice-search-bar.dhishrdsvcprod.dhiaws.com/runtime.abaab477922b62f8.js" type="module"></script><script src="https://job-search-dice-search-bar.dhishrdsvcprod.dhiaws.com/polyfills.d0e36ebd4a86946f.js" type="module"></script><script src="https://job-search-dice-search-bar.dhishrdsvcprod.dhiaws.com/main.c29d195d0bc78d33.js" type="module"></script>
+    </div>
+                    </div>
+                </div>
+                <div class="cta-wrapper">
+            <div class="icon-image"><img src="/binaries/content/gallery/dice/home-page-redesign/hero/cyan.svg" alt="CTA Icon" /></div>
+        <div class="cta-text-wrapper">
+            <div class="title">Looking to hire tech talent?</div>
+            <div class="description"><p>Find a solution to fit your needs.&nbsp;</p></div>
+        </div>
+        <div class="cta-button-wrapper">
+                <a href="https://www.dice.com/hiring/pricing" style="text-decoration:none;">
+                    <button >Get Started</button>
+                </a>
+        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+                </div>
+                <div>
+                    
+
+<div class="w-100" style="padding-top:80px; ">
+    
+</div>
+
+                </div>
+                <div>
+                    
+
+
+        <!-- BEGIN AUTHOR BODY CONTRIBUTION -->
+        <style>
+   .partner-banner-ad-div h2 {
+      font-family: Degular;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 120%;
+      padding-bottom: 24px;
+      margin-bottom: 0;
+   }
+</style>
+        <!-- END AUTHOR BODY CONTRIBUTION -->
+
+
+
+                </div>
+                <div>
+                    
+
+
+
+
+
+
+
+<div class="partner-banner-ad-div text-center">
+        <h2>Explore thousands of top tech employers hiring on Dice, featuring…</h2>
+    <div class="ad-row-wrapper d-flex flex-wrap">
+        <div id="div-gpt-ad-134677207-0" class="partner-banner-slot align-items-center adzoom">
+<script>                window.googletag = window.googletag || {cmd: []};
+googletag.cmd.push(function() { googletag.display("div-gpt-ad-134677207-0"); });            </script>
+        </div>
+        <div id="div-gpt-ad-134677207-1" class="partner-banner-slot align-items-center adzoom">
+<script>                window.googletag = window.googletag || {cmd: []};
+googletag.cmd.push(function() { googletag.display("div-gpt-ad-134677207-1"); });            </script>
+        </div>
+        <div id="div-gpt-ad-134677207-2" class="partner-banner-slot align-items-center adzoom">
+<script>                window.googletag = window.googletag || {cmd: []};
+googletag.cmd.push(function() { googletag.display("div-gpt-ad-134677207-2"); });            </script>
+        </div>
+        <div id="div-gpt-ad-134677207-3" class="partner-banner-slot align-items-center adzoom">
+<script>                window.googletag = window.googletag || {cmd: []};
+googletag.cmd.push(function() { googletag.display("div-gpt-ad-134677207-3"); });            </script>
+        </div>
+        <div id="div-gpt-ad-134677207-4" class="partner-banner-slot align-items-center adzoom">
+<script>                window.googletag = window.googletag || {cmd: []};
+googletag.cmd.push(function() { googletag.display("div-gpt-ad-134677207-4"); });            </script>
+        </div>
+        <div id="div-gpt-ad-134677207-5" class="partner-banner-slot align-items-center adzoom">
+<script>                window.googletag = window.googletag || {cmd: []};
+googletag.cmd.push(function() { googletag.display("div-gpt-ad-134677207-5"); });            </script>
+        </div>
+    </div>
+</div>
+
+
+                </div>
+                <div>
+                    
+
+
+        <!-- BEGIN AUTHOR BODY CONTRIBUTION -->
+        <style>
+    .ai-job-search-cta {
+        display:grid;
+        place-items:center;
+        margin-top:60px;
+        margin-bottom:98px;
+    }
+
+    .ai-job-search-cta h2 {
+       font-family: Degular;
+       font-size: 40px;
+       font-style: normal;
+       font-weight: 700;
+       line-height: 120%;
+       padding-bottom: 24px;
+       margin-bottom: 0;
+       text-align:center;
+       width:90%;
+    }
+
+
+    .ai-job-search-cta .cta-btn-left {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 12px 32px;
+        color: #FFFFFF;
+        background-color: #0E7490;
+        border: 1px solid #FFFFFF;
+        border-radius: 50px;
+        text-decoration: none;
+        -webkit-transition: background-color 1s ease-out;
+        -moz-transition: background-color 1s ease-out;
+        -o-transition: background-color 1s ease-out;
+        transition: background-color 1s ease-out;
+        max-width: fit-content;
+    }
+    .ai-job-search-cta  .cta-btn-left:hover {
+        color: #0E7490;
+        background-color: #FFFFFF;
+        border: 1px solid #0E7490;
+    }
+    .ai-job-search-cta  .cta-btn-left ion-icon {
+        height: 1.5rem;
+        width: 1.5rem;
+        padding-left: .5rem;
+    }
+</style>
+
+
+<div class="ai-job-search-cta">
+    <h2>What if you could ask your AI to find your next job?<br/>Dice makes that real.</h2>
+    <a href="https://www.dice.com/career-advice/dice-launches-mcp-server-for-ai-powered-job-search" class="cta-btn-left">
+        Learn more<ion-icon name="chevron-forward-outline" alt=""></ion-icon>
+    </a>
+</div>
+        <!-- END AUTHOR BODY CONTRIBUTION -->
+
+
+
+                </div>
+                <div>
+                    
+
+
+<div id="card-grid-1103087216" class="seds">
+    <div class="seds-container">
+        <div class="cardsetOuterWrapper">
+            <div class="cardsetInnerWrapper">
+                <div class="seds-row">
+                    <div class="seds-col-12 seds-col-lg-5">
+                           <h3 class="component-title">Dice, by the numbers</h3>
+                    </div>
+
+                        <div class="seds-col-12 seds-col-lg-7">
+                            <div class="seds-row" >
+                                    <div class="seds-col-12 seds-col-md-4 seds-pt-200 seds-pt-lg-0">
+<div class="stats-title" style="color: var(--Colors-cyan-500, #06B6D4)">                                            5k+
+                                        </div>
+<div class="stats-subcopy" style="color: #FFFFFF"">                                                Companies hire on Dice
+                                            </div>
+                                    </div>
+                                    <div class="seds-col-12 seds-col-md-4 seds-pt-200 seds-pt-lg-0">
+<div class="stats-title" style="color: var(--Colors-cyan-500, #06B6D4)">                                            200k+
+                                        </div>
+<div class="stats-subcopy" style="color: #FFFFFF"">                                                Jobs posted monthly on Dice
+                                            </div>
+                                    </div>
+                                    <div class="seds-col-12 seds-col-md-4 seds-pt-200 seds-pt-lg-0">
+<div class="stats-title" style="color: var(--Colors-cyan-500, #06B6D4)">                                            8.2M+
+                                        </div>
+<div class="stats-subcopy" style="color: #FFFFFF"">                                                Tech professionals trust Dice
+                                            </div>
+                                    </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+                </div>
+                <div>
+                    
+
+
+
+   <div id="cta-1191944099" class="seds" style="background-color: var(--Colors-base-white, #FFFFFF)">
+        <div class="seds-container seds-py-400">
+            
+
+               <div class="seds-row vertical-alignment">
+
+    <div class="seds-col-12 seds-col-lg-6 seds-order-0 seds-order-lg-1 paddingRemover">
+        <div class="ctaImageWrapper">
+                <img src="/binaries/content/gallery/dice/home-page-redesign/cta/tech-professionalscta_md.png" alt="Tech ProfessionalsCTA_md.png"/>
+        </div>
+    </div>
+     <div class="seds-col-12 seds-col-lg-6">
+         <div class="cta-content-wrapper                  seds-me-lg-150
+" >
+                <div class="badgeButton"><span class="badgeButtonText">Tech Professionals</span></div>
+                <h2 class="title">Find the right tech job, on your terms</h2>
+                <div class="description"><p>Dice gives you tools to instantly find and filter through jobs that match your skills, experience and career goals — so you can choose your next role with confidence.</p></div>
+            <div class="cta-buttons-container">
+<a href="/register"class="cta-btn-left">        Create your free profile
+    </a>
+            </div>
+         </div>
+
+    </div>
+                </div>
+        </div>
+   </div>
+
+
+
+                </div>
+                <div>
+                    
+
+<div id="multiple-type-1118504688" class="seds" style="background-color: var(--Colors-zinc-50, #FAFAFA)">
+    <div class="seds-container seds-pt-400 seds-pb-400">
+                <div class="seds-row">
+                    <div class="seds-col-12 seds-col-lg-4">
+    
+    <div class="cta-content-wrapper">
+            <h2 class="title">Tech Career Resources: Advice, tips and more</h2>
+            <div class="cta-description"><p>Insights on how to find and land jobs, evaluate companies and roles, earn what you're worth, upskill and uplevel, and so much more.</p></div>
+        <div class="mobile-category-display">
+            <div class="category-display-header">Career Advice Categories</div>
+            <div class="category-display-wrapper">
+                        <div class="seds-btn category-button">
+                              <a href="/career-advice/job-hunting"><span>&#x1F4BC; </span><span class="categoryButtonText">Job Hunting</span></a>
+                        </div>
+                        <div class="seds-btn category-button">
+                              <a href="/career-advice/resume-help"><span>&#x1F4C4; </span><span class="categoryButtonText">Resume Help</span></a>
+                        </div>
+                        <div class="seds-btn category-button">
+                              <a href="/career-advice/interview-tips"><span>&#x1F9D0; </span><span class="categoryButtonText">Interview Tips</span></a>
+                        </div>
+                        <div class="seds-btn category-button">
+                              <a href="/career-advice/career-path"><span>&#x1f9ed; </span><span class="categoryButtonText">Career Path</span></a>
+                        </div>
+                        <div class="seds-btn category-button">
+                              <a href="/career-advice/career-growth"><span>&#x1F331; </span><span class="categoryButtonText">Career Growth</span></a>
+                        </div>
+                        <div class="seds-btn category-button">
+                              <a href="/career-advice/diversity-equity-inclusion"><span>&#x1F932; </span><span class="categoryButtonText">Diversity Equity and Inclusion</span></a>
+                        </div>
+                        <div class="seds-btn category-button">
+                              <a href="/career-advice/dice-daily"><span>&#9728;&#65039; </span><span class="categoryButtonText">Dice Daily</span></a>
+                        </div>
+                        <div class="seds-btn category-button">
+                              <a href="/recruiting/tech-connects-podcast"><span>&#x1f399 </span><span class="categoryButtonText">Tech Connects Podcast</span></a>
+                        </div>
+            </div>
+        </div>
+
+    <div class="cta-buttons-container" >
+<a href="/career-advice" class="cta-btn-left">        Get more career insights
+        </a>
+    </div>
+    </div>
+                    </div>
+                    <div class="seds-col-12 seds-col-lg-8">
+    
+    <div class="featured-doc-wrapper">
+        <div class="seds-row">
+           <div class="seds-col-6 seds-order-1 seds-order-md-0">
+        <img class="featured-doc" src="/binaries/small/content/gallery/dice/home-page/hero-images/dce_tsr-2026_web-banner_1040x695.jpg" alt="Tech Talent Is Moving — But Not With Confidence" loading="lazy"/>
+           </div>
+           <div class="seds-col-6 seds-order-0 seds-order-md-1">
+                <h3 class="featured-doc-title">
+                    <a href="https://www.dice.com/hiring/recruitment/reports/tech-sentiment-report">Tech Talent Is Moving — But Not With Confidence</a>
+                </h3>
+                <div class="featured-doc-description">
+                        <p>Uncover the forces behind today's defensive job market: rising burnout, AI displacement fears, and a workforce repositioning out of necessity, not opportunity.&nbsp;</p>
+
+<p><strong><a href="https://www.dice.com/hiring/recruitment/reports/tech-sentiment-report" target="_blank">Read now<ion-icon alt="" name="chevron-forward-outline"></ion-icon></a></strong></p>
+                </div>
+           </div>
+        </div>
+    </div>
+
+                        <div class="seds-row">
+         <div class="seds-col-12 seds-col-md-4">
+    <div class="mobile-tile-display">
+        
+         <div class="tile">
+             <div class="seds-row">
+                 <div class="seds-col-6">
+                        <h3 class="item-title"><a href="/recruiting/future-of-tech-recruiting-how-ai-will-continue-to-change-recruiting">Future of Tech Recruiting: How AI Will  Change Recruiting</a>
+                        </h3>
+                 </div>
+                 <div class="seds-col-6">
+                    <div class="item-img-wrapper">
+            <img src="/binaries/small/content/gallery/dice/insights/2019/11/cropped-shutterstock_1179932296-1024x576-1-1024x576.jpg" alt="Future of Tech Recruiting: How AI Will  Change Recruiting" loading="lazy">
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+    <div class="desktop-tile-display">
+        
+        <div class="tile">
+    <div class="item-img-wrapper">
+            <img src="/binaries/small/content/gallery/dice/insights/2019/11/cropped-shutterstock_1179932296-1024x576-1-1024x576.jpg" alt="Future of Tech Recruiting: How AI Will  Change Recruiting" loading="lazy">
+    </div>
+        <h3 class="item-title"><a href="/recruiting/future-of-tech-recruiting-how-ai-will-continue-to-change-recruiting">Future of Tech Recruiting: How AI Will  Change Recruiting</a></h3>
+    <div class="item-text">
+            Automation has impacted recruiting for quite some time. However, the next several years may bring recruiting’s biggest shift in decades, thanks to the evolution of generative AI and the increasing adoption of conversational AI, which may prove pivotal for recruiting teams and staffing firms. Here’s how generative AI has already changed recruiting, how it’s evolving, and which AI applications recruiters can start adopting now. We’ll also share how organizations can prepare for the transformations and greater recruiting efficiencies promised by conversational AI. Here are the topline benefits recruiters have reaped from AI, how those benefits came about, and where the future of AI and recruiting is heading. Generative AI has been a game changer for recruiting Core metrics like cost per hire, time to hire, redeployment (for staffing firms), and candidate satisfaction have been drastically improved by AI over the past five or so years, as it reduces mundane, repetitive tasks and frees recr
+     </div>
+        </div>
+    </div>
+         </div>
+         <div class="seds-col-12 seds-col-md-4">
+    <div class="mobile-tile-display">
+        
+         <div class="tile">
+             <div class="seds-row">
+                 <div class="seds-col-6">
+                        <h3 class="item-title"><a href="/recruiting/business-analyst-job-description-template">Business Analyst: Job Description Template</a>
+                        </h3>
+                 </div>
+                 <div class="seds-col-6">
+                    <div class="item-img-wrapper">
+            <img src="/binaries/small/content/gallery/dice/insights/2018/03/cropped-shutterstock_403944124-1.jpg" alt="Business Analyst: Job Description Template" loading="lazy">
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+    <div class="desktop-tile-display">
+        
+        <div class="tile">
+    <div class="item-img-wrapper">
+            <img src="/binaries/small/content/gallery/dice/insights/2018/03/cropped-shutterstock_403944124-1.jpg" alt="Business Analyst: Job Description Template" loading="lazy">
+    </div>
+        <h3 class="item-title"><a href="/recruiting/business-analyst-job-description-template">Business Analyst: Job Description Template</a></h3>
+    <div class="item-text">
+            Looking for a job posting template for Business Analyst jobs that can help you attract top talent? We’ve got you covered. Use this free business analyst job description sample template to assist you in finding the most qualified and experienced Business Analyst to support your company’s needs—and make the hiring process easier on you, too. Just post this template to our site and make necessary edits to highlight your company’s specific requirements and offerings. Hiring other positions? Check out our job description template library. Business Analyst Job Summary: We’re in search of a Business Analyst who is obsessed with details, well-versed in strategic planning, and skilled at implementing business information systems. We’ll need you to develop cost-based strategies and help streamline reporting capabilities, while optimizing workflows and identifying next-level market opportunities. You can spot problems before they steamroll and create solutions that will assist us in moving forwar
+     </div>
+        </div>
+    </div>
+         </div>
+         <div class="seds-col-12 seds-col-md-4">
+    <div class="mobile-tile-display">
+        
+         <div class="tile">
+             <div class="seds-row">
+                 <div class="seds-col-6">
+                        <h3 class="item-title"><a href="/career-advice/back-end-developer-skills-you-need-to-know">Back End Developer Skills You Need to Know</a>
+                        </h3>
+                 </div>
+                 <div class="seds-col-6">
+                    <div class="item-img-wrapper">
+            <img src="/binaries/small/content/gallery/dice/insights/2020/01/shutterstock_1209433882.jpg" alt="Back End Developer Skills You Need to Know" loading="lazy">
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+    <div class="desktop-tile-display">
+        
+        <div class="tile">
+    <div class="item-img-wrapper">
+            <img src="/binaries/small/content/gallery/dice/insights/2020/01/shutterstock_1209433882.jpg" alt="Back End Developer Skills You Need to Know" loading="lazy">
+    </div>
+        <h3 class="item-title"><a href="/career-advice/back-end-developer-skills-you-need-to-know">Back End Developer Skills You Need to Know</a></h3>
+    <div class="item-text">
+            Back end developers have a vital task: they must build and maintain the infrastructure that allows the front end of a website (i.e., what the user sees) to operate. While those end users may never think about all the work necessary to have a site load instantly, back end developers are obsessed with ensuring servers, applications, and databases can handle anything. Organizations everywhere need their web infrastructure maintained, which is why there’s intense demand for back end developers with the right mix of skills and experience. According to Lightcast, which collects and analyzes millions of job postings from across the country, organizations posted some 28,865 back end developer job openings over the past 12 months; projected growth for the profession is estimated at 19.2 percent over the next decade. What Skills Do Back End Developers Need? Lightcast also offers a breakdown of back end developer “distinguishing skills,” which are defined as the advanced skills these tech profess
+     </div>
+        </div>
+    </div>
+         </div>
+                        </div>
+                    </div>
+                </div>
+    </div>
+</div>
+
+
+                </div>
+                <div>
+                    
+
+
+        <!-- BEGIN AUTHOR BODY CONTRIBUTION -->
+        <style>
+.featured-doc-wrapper img.featured-doc {
+   max-width: 100%;
+}
+</style>
+        <!-- END AUTHOR BODY CONTRIBUTION -->
+
+
+
+                </div>
+                <div>
+                    
+
+
+
+   <div id="cta-190334269" class="seds" style="background-color: var(--Colors-base-white, #FFFFFF)">
+        <div class="seds-container seds-py-400">
+            
+
+               <div class="seds-row vertical-alignment">
+
+    <div class="seds-col-12 seds-col-lg-6 seds-order-0 seds-order-lg-0 paddingRemover">
+        <div class="ctaImageWrapper">
+                <img src="/binaries/content/gallery/dice/home-page-redesign/cta/employerscta_md.png" alt="EmployersCTA_md.png"/>
+        </div>
+    </div>
+     <div class="seds-col-12 seds-col-lg-6">
+         <div class="cta-content-wrapper                  seds-ms-lg-150
+" >
+                <div class="badgeButton"><span class="badgeButtonText">Employers</span></div>
+                <h2 class="title">Find and hire top tech talent today</h2>
+                <div class="description"><p>With access to millions of tech professionals and the AI matching tools to connect you with the best ones, Dice makes filling your open roles easier than ever.</p></div>
+        <div class="cta-buttons-container">
+            <div class=" seds-mb-100 seds-mb-lg-0 seds-me-0">
+<a href="/hiring/find-candidates"class="cta-btn-left">        Hire tech talent
+    </a>
+            </div>
+            <div class="">
+<a href="/hiring/post-jobs"class="cta-btn-right">        Post a job
+    </a>
+            </div>
+        </div>
+         </div>
+
+    </div>
+                </div>
+        </div>
+   </div>
+
+
+
+                </div>
+                <div>
+                    
+
+
+
+
+<div id="cta-1634532289" class="seds" style="background-color: var(--Colors-cyan-950, #083344);">
+    <div class="seds-container">
+
+            <div class="cta-highlight">
+                <div class="innerCTAbg">
+                        <h2 class="title" role="heading" aria-level="2">Opportunity is waiting</h2>
+                        <h3 class="description"><p>Join the millions of tech professionals who use Dice to help grow their tech careers. Find jobs, discover companies, get advice, and more!</p> </h3>
+
+            <div class="cta-buttons-container">
+<a href="/register/"class="cta-btn-left">        Create your free profile<ion-icon name="chevron-forward-outline" alt=""></ion-icon>
+    </a>
+            </div>
+
+
+                </div>
+            </div>
+    </div>
+</div>
+
+<style>
+    #cta-1634532289.seds .seds-container {
+        display: block;
+        text-align: center;
+        padding: 3rem 1rem;
+    }
+    #cta-1634532289.seds .cta-highlight .innerCTAbg {
+         text-align: center;
+         border-radius: 8px;
+         padding: 20px 20px 40px 20px;
+         background-color: #FFFFFF;
+     }
+    #cta-1634532289.seds h2.title {
+         color: var(--Colors-cyan-600, #0891b2);;
+         text-align: center;
+         font-family: Degular, serif;
+         font-size: 2.5rem;
+         font-style: normal;
+         font-weight: 700;
+         line-height: 120%;
+         padding-bottom: 1.5rem;
+         margin-bottom: 0;
+     }
+    #cta-1634532289.seds h3.description {
+         text-align: center;
+         align-items: center;
+         gap: 1.5rem;
+         align-self: stretch;
+         font-family: "IBM Plex Sans", sans-serif;
+         padding-bottom: 3rem;
+         margin-bottom: 0;
+         max-width: 57.5rem;
+     }
+    #cta-1634532289.seds .cta-highlight .description p {
+         font-size: 1.5rem;
+         font-style: normal;
+         font-weight: 400;
+         line-height: 2rem;
+         margin-bottom: 0;
+         color: var(--Colors-zinc-900, #18181B);;
+     }
+    #cta-1634532289.seds .cta-highlight .cta-buttons-container {
+         display: block;
+         width: 100%;
+         gap: 1rem;
+     }
+    #cta-1634532289.seds .cta-highlight .cta-buttons-container ion-icon {
+         height: 1.5rem;
+         width: 1.5rem;
+         padding-left: .5rem;
+     }
+    #cta-1634532289.seds .cta-btn-left {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         padding: 12px 32px;
+         color: #FFFFFF;
+         background-color: #0E7490;
+         border: 1px solid #FFFFFF;
+         border-radius: 50px;
+         text-decoration: none;
+        -webkit-transition: background-color 1s ease-out;
+        -moz-transition: background-color 1s ease-out;
+        -o-transition: background-color 1s ease-out;
+        transition: background-color 1s ease-out;
+     }
+    #cta-1634532289.seds .cta-btn-left:hover {
+         color: #0E7490;
+         background-color: #FFFFFF;
+         border: 1px solid #0E7490;
+     }
+    #cta-1634532289.seds .cta-btn-left-inverse {
+         color: #0E7490;
+         background-color: #FFFFFF;
+         border: 1px solid #0E7490;
+     }
+    #cta-1634532289.seds .cta-btn-left-inverse:hover {
+         color: #0E7490;
+         background-color: #FFFFFF;
+         border: 1px solid #0E7490;
+     }
+    #cta-1634532289.seds .cta-btn-right{
+         display: block;
+         padding: .75rem 2rem;
+         color: #BE3432;
+         background-color: #FFFFFF;
+         border: 1px solid #BE3432;
+         border-radius: 50px;
+         text-decoration: none;
+        -webkit-transition: background-color 1s ease-out;
+        -moz-transition: background-color 1s ease-out;
+        -o-transition: background-color 1s ease-out;
+        transition: background-color 1s ease-out;
+     }
+    #cta-1634532289.seds .cta-btn-right:hover {
+         color: #FFFFFF;
+         background-color: #BE3432;
+         border: 1px solid #FFFFFF;
+     }
+    #cta-1634532289.seds .cta-btn-right-inverse {
+         color: #FFFFFF;
+         background-color: #BE3432;
+         border: 1px solid #FFFFFF;
+     }
+    #cta-1634532289.seds .cta-btn-right-inverse:hover {
+         color: #FFFFFF;
+         background-color: #BE3432;
+         border: 1px solid #FFFFFF;
+     }
+    #cta-1634532289.seds .cta-link-right{
+         display: block;
+         color: #BE3432;
+         text-decoration: none;
+         padding-top: 12px;
+     }
+    #cta-1634532289.seds .cta-link-right:hover {
+         color: #FFFFFF;
+     }
+    #cta-1634532289.seds .cta-link-left{
+         display: block;
+         color: #FFFFFF;
+         text-decoration: none;
+         padding-top: 12px;
+     }
+    #cta-1634532289.seds .cta-link-left:hover {
+         color: #0E7490;
+     }
+    #cta-1634532289.seds .cta-highlight .homeBullets-container {
+         display: flex;
+         justify-content: center;
+         align-items: flex-start;
+         align-content: flex-start;
+         gap: 1.5rem 3rem;
+         flex: 1 0 0;
+         flex-wrap: wrap
+     }
+    #cta-1634532289.seds .cta-highlight .homeBullets {
+         display: flex;
+         align-items: center;
+         text-align: unset;
+     }
+    #cta-1634532289.seds .cta-highlight .homeBullets-container .hydrated {
+         width: 1.5rem;
+         height: 1.5rem;
+         fill: none;
+     }
+    #cta-1634532289.seds .cta-highlight .homeBullets span {
+         display: flex;
+         justify-content: center;
+         align-items: flex-start;
+         align-content: flex-start;
+         flex: 1 0 0;
+         flex-wrap: wrap;
+         width: auto;
+         height: auto;
+         font-size: 1.125rem
+     }
+    #cta-1634532289.seds .cta-highlight .homeBullets span .iconMargin {
+         margin-left: 1rem;
+     }
+
+    @media(min-width:768px) {
+        #cta-1634532289.seds .seds-container {
+            padding: 5rem 1.5rem;
+        }
+        #cta-1634532289.seds .cta-highlight .innerCTAbg {
+         padding: 3rem 1.5rem;
+         background-color: #FFFFFF;
+         box-shadow: 0;
+     }
+        #cta-1634532289.seds .cta-highlight {
+            display: flex;
+            flex-direction: column;
+        }
+        #cta-1634532289.seds .cta-highlight .title {
+            font-size: 4rem;
+        }
+        #cta-1634532289.seds .cta-highlight .description {
+            max-width: 920px;
+            margin: auto
+        }
+        #cta-1634532289.seds .cta-highlight .cta-buttons-container {
+            display: inline-flex;
+            justify-content: center;
+            flex-direction: row;
+        }
+        #cta-1634532289.seds .cta-highlight .secondButton {
+            padding-top: 0
+        }
+        #cta-1634532289.seds .cta-highlight .homeBullets-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center
+        }
+        #cta-1634532289.seds .cta-highlight .homeBullets .hydrated {
+            display: flex;
+            align-items: center;
+        }
+        #cta-1634532289.seds .cta-highlight .homeBullets span {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex: 1;
+            gap: 0;
+            flex-wrap: nowrap;
+        }
+    }
+
+    @media(min-width:1200px) {
+         #cta-1634532289.seds .seds-container {
+            padding: 80px 100px;
+        }
+        #cta-1634532289.seds .cta-highlight .homeBullets span {
+            align-items: flex-start;
+            align-content: flex-start;
+            flex-wrap: wrap;
+            overflow: unset;
+            white-space: unset;
+            padding-right: 1.5rem
+        }
+    }
+</style>
+
+                </div>
+                <div>
+                    
+
+
+
+
+    <div class="seds">
+        <div id="testimonial-604255266" class="testimonial-604255266" style="background-color: var(--Colors-cyan-950, #083344);;">
+                <div id="carousel-604255266" class="scroll-content d-none" style="background-color: var(--Colors-cyan-950, #083344);;">
+                    <ul>
+                            <li class="slide" aria-hidden="true">
+    <div class="testimonial-item">
+            <img src="/binaries/content/gallery/dice/icons/heart.svg" alt="" role="none"/>
+
+        <div class="seds-pt-200 testimonial-content" >
+                    <blockquote class="testimonial-quote-style"><p>"All the features are easy to navigate, and the search engine is not overwhelming, as I get the right candidates and skills the first time around. Lastly, I get the best service support interaction. They are quick to help with any issues and they do it with top-tier service."</p></blockquote>
+                <div class="attribution-text">
+                    The Select Group
+                </div>
+        </div>
+    </div>
+                            </li>
+                            <li class="slide" aria-hidden="true">
+    <div class="testimonial-item">
+            <img src="/binaries/content/gallery/dice/icons/heart.svg" alt="" role="none"/>
+
+        <div class="seds-pt-200 testimonial-content" >
+                    <blockquote class="testimonial-quote-style"><p>“Perfect platform for <u>real</u> jobs in the IT world. The job postings direct you to a recruiter for the company or to the company's website itself.”</p></blockquote>
+                <div class="attribution-text">
+                    Nichole P., Tech Professional
+                </div>
+        </div>
+    </div>
+                            </li>
+                            <li class="slide" aria-hidden="true">
+    <div class="testimonial-item">
+            <img src="/binaries/content/gallery/dice/icons/heart.svg" alt="" role="none"/>
+
+        <div class="seds-pt-200 testimonial-content" >
+                    <blockquote class="testimonial-quote-style"><p>“I get more job leads from Dice than any other platform. Fact. And, these leads are authentic and relevant."</p></blockquote>
+                <div class="attribution-text">
+                    Zach Riley, Tech Professional
+                </div>
+        </div>
+    </div>
+                            </li>
+                    </ul>
+                </div>
+        </div>
+    </div>
+
+
+
+                </div>
+                <div>
+                    
+
+
+        <!-- BEGIN AUTHOR BODY CONTRIBUTION -->
+        <style>
+   .cta-highlight .innerCTAbg {
+      background-color: #FFF!important;
+      padding: 20px 20px 40px 20px!important;
+   }
+</style>
+        <!-- END AUTHOR BODY CONTRIBUTION -->
+
+
+
+                </div>
+                <div>
+                    
+
+<div class="w-100" style="padding-top:2rem; ">
+    
+</div>
+
+                </div>
+                <div>
+                    
+
+    <div id="site-op-763136222" class="seds" style="background-color: #ffffff">
+        <div class="seds-container" xmlns="http://www.w3.org/1999/html" data-an-category="siteOpLocation">
+            <div class="section-wrapper">
+                <div class="site-op-location">
+                    <h2 class="linkhub-title">
+                        Browse Jobs & Companies
+                        
+                    </h2>
+    <nav style="overflow:auto;">
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active"
+                   id="site-market-by-title-tab"
+                   data-toggle="tab"
+                   href="#site-market-by-title"
+                   role="tab"
+                   aria-controls="site-market-by-title"
+                   aria-selected="true">Job Title
+                </a>
+                <a class="nav-item nav-link "
+                   id="site-market-data-ai-ml-tab"
+                   data-toggle="tab"
+                   href="#site-market-data-ai-ml"
+                   role="tab"
+                   aria-controls="site-market-data-ai-ml"
+                   aria-selected="false">Data, AI & ML
+                </a>
+                <a class="nav-item nav-link "
+                   id="site-market-skills-tab"
+                   data-toggle="tab"
+                   href="#site-market-skills"
+                   role="tab"
+                   aria-controls="site-market-skills"
+                   aria-selected="false">Skills
+                </a>
+                <a class="nav-item nav-link "
+                   id="site-market-popular-searches-tab"
+                   data-toggle="tab"
+                   href="#site-market-popular-searches"
+                   role="tab"
+                   aria-controls="site-market-popular-searches"
+                   aria-selected="false">Popular Searches
+                </a>
+                <a class="nav-item nav-link "
+                   id="site-market-category-tab"
+                   data-toggle="tab"
+                   href="#site-market-category"
+                   role="tab"
+                   aria-controls="site-market-category"
+                   aria-selected="false">Category
+                </a>
+                <a class="nav-item nav-link "
+                   id="site-market-top-companies-tab"
+                   data-toggle="tab"
+                   href="#site-market-top-companies"
+                   role="tab"
+                   aria-controls="site-market-top-companies"
+                   aria-selected="false">Top Companies
+                </a>
+        </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane show active unauth-job-list"
+                 id="site-market-by-title"
+                 role="tabpanel"
+                 aria-labelledby="site-market-by-title-tab">
+                    <p class="site-op-list-item"><a href="/jobs/q-.NET+Developer-jobs">.NET Developer</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Business+Analyst-jobs">Business Analyst</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Cyber+Security+Analyst-jobs">Cyber Security Analyst</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Data+Scientist-jobs">Data Scientist</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-DevOps+Engineer-jobs">DevOps Engineer</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Full+Stack+Developer-jobs">Full Stack Developer</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Game+Developer-jobs">Game Developer</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-IT+Help+Desk-jobs">IT help desk</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-IT+Support-jobs">IT Support</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Network+Administrator-jobs">Network Administrator</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Network+Engineer-jobs">Network Engineer</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Product+Manager-jobs">Product Manager</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Program+Manager-jobs">Program Manager</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Project+Management-jobs">Project Management</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Project+Manager-jobs">Project Manager</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-QA+Tester-jobs">QA Tester</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Quality+Analyst-jobs">Quality Analyst</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Salesforce+Developer-jobs">Salesforce Developer</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Scrum+Master-jobs">Scrum Master</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-SDET-jobs">SDET</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-SEO-jobs">SEO jobs</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-SOC+Analyst-jobs">SOC Analyst</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Software+Developer-jobs">Software Developer</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Software+Engineer-jobs">Software Engineer</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Solution+Architect-jobs">Solution Architect</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Systems+Administrator-jobs">Systems Administrator</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Tech+Sales-jobs">Tech Sales</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Web+Developer-jobs">Web Developer</a></p>
+            </div>
+            <div class="tab-pane  unauth-job-list"
+                 id="site-market-data-ai-ml"
+                 role="tabpanel"
+                 aria-labelledby="site-market-data-ai-ml-tab">
+                    <p class="site-op-list-item"><a href="/jobs/q-Apache+Kafka-jobs">Apache Kafka</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Artificial+Intelligence-jobs">Artificial intelligence</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Big+Data-jobs">Big data</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Business+Analytics-jobs">Business analytics</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Cognos-jobs">Cognos</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Data+Analysis-jobs">Data analysis</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Data+Engineer-jobs">Data Engineer</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Data+Science-jobs">Data science</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Datadog-jobs">Datadog</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-DBA-jobs">DBA</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Deep+Learning-jobs">Deep learning</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-ETL-jobs">ETL</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Machine+Learning+Engineer-jobs">Machine Learning Engineer</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-MongoDB-jobs">MongoDB</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-MySQL-jobs">MySQL</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Neural+Networks-jobs">Neural networks</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Oracle-jobs">Oracle</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Prompt+Engineering-jobs">Prompt engineering</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Python-jobs">Python</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Python+Developer-jobs">Python Developer</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-SAP+HANA-jobs">SAP HANA</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Snowflake-jobs">Snowflake</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Spark-jobs">Spark</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Splunk-jobs">Splunk</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-SQL-jobs">SQL</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-SQL+Developer-jobs">SQL Developer</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Tableau-jobs">Tableau</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-TensorFlow-jobs">TensorFlow</a></p>
+            </div>
+            <div class="tab-pane  unauth-job-list"
+                 id="site-market-skills"
+                 role="tabpanel"
+                 aria-labelledby="site-market-skills-tab">
+                    <p class="site-op-list-item"><a href="/jobs/q-Amazon+Web+Services-jobs">Amazon Web Services</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-AngularJS-jobs">AngularJS</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Autodesk-jobs">Autodesk</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Azure-jobs">Azure</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-C-jobs">C</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-C%23-jobs">C#</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-C%2B%2B-jobs">C++</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Cryptocurrency-jobs">Cryptocurrency</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Django-jobs">Django</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Docker-jobs">Docker</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Elasticsearch-jobs">Elasticsearch</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Erlang-jobs">Erlang</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-GraphQL-jobs">GraphQL</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Groovy-jobs">Groovy</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-JavaScript-jobs">JavaScript</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Kotlin-jobs">Kotlin</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Linux-jobs">Linux</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-MATLAB-jobs">MATLAB</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Mulesoft-jobs">Mulesoft</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Pega-jobs">Pega</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Perl-jobs">Perl</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-React.js-jobs">React.js</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Ruby-jobs">Ruby</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-SAP+ABAP-jobs">SAP ABAP</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Scala-jobs">Scala</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Selenium-jobs">Selenium</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Spring-jobs">Spring</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Xamarin-jobs">Xamarin</a></p>
+            </div>
+            <div class="tab-pane  unauth-job-list"
+                 id="site-market-popular-searches"
+                 role="tabpanel"
+                 aria-labelledby="site-market-popular-searches-tab">
+                    <p class="site-op-list-item"><a href="/jobs/q-.NET-jobs">.NET</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Android+Developer-jobs">Android Developer</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-AWS-jobs">AWS</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Backend+Developer-jobs">Backend Developer</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Blockchain-jobs">Blockchain</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Cloud-jobs">Cloud</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Cyber+Security-jobs">Cyber security</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Data+Analyst-jobs">Data Analyst</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Data+Analytics-jobs">Data Analytics</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Data+Engineering-jobs">Data engineering</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Entry+Level+Computer+Science-jobs">Entry level computer science</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Entry+Level+Cyber+Security-jobs">Entry level cyber security</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Entry+Level+Data+Analyst-jobs">Entry level data analyst</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Fintech-jobs">Fintech</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Frontend+Developer-jobs">Frontend Developer</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Gaming-jobs">Gaming</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-iOS+Developer-jobs">iOS Developer</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-IT+Remote-jobs">IT remote jobs</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Java-jobs">Java</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Machine+Learning-jobs">Machine learning</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Mobile+Developer-jobs">Mobile Developer</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Programming-jobs">Programming</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Remote+Cyber+Security-jobs">Remote cyber security</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Remote+Tech-jobs">Remote tech jobs</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-ServiceNow-jobs">ServiceNow</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Swift-jobs">Swift</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-UX-jobs">UX</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Video+Game-jobs">Video Game</a></p>
+            </div>
+            <div class="tab-pane  unauth-job-list"
+                 id="site-market-category"
+                 role="tabpanel"
+                 aria-labelledby="site-market-category-tab">
+                    <p class="site-op-list-item"><a href="/jobs/q-aerospace_engineer-jobs">Aerospace engineering</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Agile-jobs">Agile</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Computer-jobs">Computer</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Computer+Engineering-jobs">Computer engineering</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Computer+Science-jobs">Computer science</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Computer+Security-jobs">Computer security</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Data+Analyst+Remote-jobs">Data Analyst remote</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Data+Entry-jobs">Data entry</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Data+Mining-jobs">Data mining</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-DevOps-jobs">DevOps</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-DoD-jobs">DoD jobs</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Educational+Technology-jobs">Educational technology</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Entry+Level+IT-jobs">Entry level IT</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Hadoop-jobs">Hadoop</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Information+Technology-jobs">Information technology</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-IT-jobs">IT jobs</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Linux+Administrator-jobs">Linux Administrator</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Part+Time-jobs">Part time jobs</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-PHP+Developer-jobs">PHP Developer</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-QA-jobs">QA</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Remote-jobs">Remote jobs</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Remote+Tech+Support-jobs">Remote tech support</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Software+Engineering-jobs">Software engineering</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Startup-jobs">Startup jobs</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Technical+Support-jobs">Technical support</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Technical+Writing-jobs">Technical writing</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Technology-jobs">Technology</a></p>
+                    <p class="site-op-list-item"><a href="/jobs/q-Work+From+Home-jobs">Work from home</a></p>
+            </div>
+            <div class="tab-pane  unauth-job-list"
+                 id="site-market-top-companies"
+                 role="tabpanel"
+                 aria-labelledby="site-market-top-companies-tab">
+                    <p class="site-op-list-item"><a href="/company-profile/aaf94f5b-ce99-49ee-9ea9-c004f7279519">Arthrex Inc.</a></p>
+                    <p class="site-op-list-item"><a href="/company-profile/70513d26-e27c-4a43-b3ac-6561374cbfa3">Bank of America</a></p>
+                    <p class="site-op-list-item"><a href="/company-profile/8df151a5-0506-4793-8666-e716c11c51e4">Caesars Entertainment, Inc.</a></p>
+                    <p class="site-op-list-item"><a href="/company-profile/1c8f4bbf-2e89-5748-9c66-c29f344c286f">Campbell Soup Company</a></p>
+                    <p class="site-op-list-item"><a href="/company-profile/2a9db9b7-ec8a-5cc8-86e2-6b691c7d564e">Capital One</a></p>
+                    <p class="site-op-list-item"><a href="/company-profile/19b083b3-8313-408f-980e-8cc53f7498c9">DISH</a></p>
+                    <p class="site-op-list-item"><a href="/company-profile/c783b7fe-053e-5b13-b131-e691014c9550">Eli Lilly and Company</a></p>
+                    <p class="site-op-list-item"><a href="/company-profile/6b845d00-2d39-4e2c-af5f-d2fa5d4ddc3a">Epic Games</a></p>
+                    <p class="site-op-list-item"><a href="/company-profile/4207c97b-34c8-46aa-a178-8270f8d07288">FEMA</a></p>
+                    <p class="site-op-list-item"><a href="/company-profile/461550d3-ecf4-4f70-bc8b-8e0b60f0695c">Ford Motor Company</a></p>
+                    <p class="site-op-list-item"><a href="/company-profile/2c857ede-42a0-54e2-a33d-78e28f5a84df">Geico</a></p>
+                    <p class="site-op-list-item"><a href="/company-profile/1df6729b-a9b4-4970-805d-dd611963982b">JPMorgan Chase</a></p>
+                    <p class="site-op-list-item"><a href="/company-profile/18681f94-38b1-52d9-a5b0-6bd2ec1b0505">Luxoft USA Inc.</a></p>
+                    <p class="site-op-list-item"><a href="/company-profile/dbd2f925-a49b-46ae-90be-e0e5fb67c853">Mayo Clinic</a></p>
+                    <p class="site-op-list-item"><a href="/company-profile/168e5732-b066-50b2-923c-9e4c25802be9">Metropolitan Tranportation Authority</a></p>
+                    <p class="site-op-list-item"><a href="/company-profile/61a65f4d-cc53-44b0-accc-4cd0869d22f8">Montefiore Health System Inc</a></p>
+                    <p class="site-op-list-item"><a href="/company-profile/35841cac-57f6-53b3-b5a8-bd59aa8255e6">National Security Agency</a></p>
+                    <p class="site-op-list-item"><a href="/company-profile/2f38aa52-fffb-5f4a-97f7-507795cc6c13">Northrop Grumman</a></p>
+                    <p class="site-op-list-item"><a href="/company-profile/d8d33763-5969-4408-b76b-c8d3ebd5c6ff">Pfizer</a></p>
+                    <p class="site-op-list-item"><a href="/company-profile/11c3a083-f48f-4eb6-8f5f-e0fd17716677">SpaceX</a></p>
+                    <p class="site-op-list-item"><a href="/company-profile/43d69783-1837-4f74-8d3c-f45016273213">Swift</a></p>
+                    <p class="site-op-list-item"><a href="/company-profile/83df81f9-68b8-41dd-a54f-1777f92712b2">Synechron</a></p>
+                    <p class="site-op-list-item"><a href="/company-profile/7d106be3-742d-490f-b7b7-afb1de6d6058">Tesla</a></p>
+                    <p class="site-op-list-item"><a href="/company-profile/a4157a4e-f328-5cee-979f-b220cd3880d7">Texas A&M University</a></p>
+                    <p class="site-op-list-item"><a href="/company-profile/9265bb5a-ba22-4607-a08f-fac20bb0521b">The Walt Disney Company</a></p>
+                    <p class="site-op-list-item"><a href="/company-profile/0523689e-5acd-5c9f-b770-2593702ba55b">Travelers</a></p>
+                    <p class="site-op-list-item"><a href="/company-profile/797c2e0b-d614-445d-8ae6-f7b336e63899">Uber</a></p>
+                    <p class="site-op-list-item"><a href="/company-profile/a103a76f-d688-4414-9b4c-73f2bdafa685">Verizon</a></p>
+            </div>
+    </div>
+                </div>
+            </div>
+            <div class="linkhub-buttons-container">
+                <a href="/jobs/browse-jobs/" class="linkhub-btn-left"><span class="btn-align">Browse all jobs<ion-icon name="chevron-forward-outline" alt=""></ion-icon></span></a>
+            </div>
+        </div>
+    </div>
+
+
+
+                </div>
+                <div>
+                    
+
+                </div>
+                <div>
+                    
+
+                </div>
+                <div>
+                    
+
+
+
+
+    <div class="seds">
+        <div id="testimonial-310314045" class="testimonial-310314045" style="background-color: var(--Colors-cyan-950, #083344);;">
+                <div id="carousel-310314045" class="scroll-content d-none" style="background-color: var(--Colors-cyan-950, #083344);;">
+                    <ul>
+                            <li class="slide" aria-hidden="true">
+    <div class="testimonial-item">
+            <img src="/binaries/content/gallery/dice/icons/heart.svg" alt="" role="none"/>
+
+        <div class="seds-pt-200 testimonial-content" >
+                    <blockquote class="testimonial-quote-style"><p>"All the features are easy to navigate, and the search engine is not overwhelming, as I get the right candidates and skills the first time around. Lastly, I get the best service support interaction. They are quick to help with any issues and they do it with top-tier service."</p></blockquote>
+                <div class="attribution-text">
+                    The Select Group
+                </div>
+        </div>
+    </div>
+                            </li>
+                            <li class="slide" aria-hidden="true">
+    <div class="testimonial-item">
+            <img src="/binaries/content/gallery/dice/icons/heart.svg" alt="" role="none"/>
+
+        <div class="seds-pt-200 testimonial-content" >
+                    <blockquote class="testimonial-quote-style"><p>“Perfect platform for <u>real</u> jobs in the IT world. The job postings direct you to a recruiter for the company or to the company's website itself.”</p></blockquote>
+                <div class="attribution-text">
+                    Nichole P., Tech Professional
+                </div>
+        </div>
+    </div>
+                            </li>
+                            <li class="slide" aria-hidden="true">
+    <div class="testimonial-item">
+            <img src="/binaries/content/gallery/dice/icons/heart.svg" alt="" role="none"/>
+
+        <div class="seds-pt-200 testimonial-content" >
+                    <blockquote class="testimonial-quote-style"><p>“I get more job leads from Dice than any other platform. Fact. And, these leads are authentic and relevant."</p></blockquote>
+                <div class="attribution-text">
+                    Zach Riley, Tech Professional
+                </div>
+        </div>
+    </div>
+                            </li>
+                    </ul>
+                </div>
+        </div>
+    </div>
+
+
+
+                </div>
+    </div>
+    </div>
+
+    <div>
+                <div>
+                    <dice-candidate-footer></dice-candidate-footer>
+
+
+
+                </div>
+                <div>
+                    
+
+        <script type="application/javascript">
+            window.angularOnlinePresenceIndicatorWidgetInputs = {
+                
+                staticParams: {"environment":"prod", "brand":"dice", "mode":"candidate", "pollDetectedUser": true}
+            };
+        </script>
+<dhi-online-presence-indicator-widget dhi-online-presence-indicator-inputs-var="angularOnlinePresenceIndicatorWidgetInputs">Loading...        </dhi-online-presence-indicator-widget>
+            <link rel="stylesheet" href="https://widgets.svc.dhigroupinc.com/online-presence-indicator-widget/styles.539c1659cb62d71310e1.css"><script src="https://widgets.svc.dhigroupinc.com/online-presence-indicator-widget/runtime.5b9d918425c5cd54453d.js" defer></script><script src="https://widgets.svc.dhigroupinc.com/online-presence-indicator-widget/polyfills-es5.b55d6bbc369073d8c391.js" nomodule defer></script><script src="https://widgets.svc.dhigroupinc.com/online-presence-indicator-widget/polyfills.013f070d99f5655888c9.js" defer></script><script src="https://widgets.svc.dhigroupinc.com/online-presence-indicator-widget/main.839d1eb26d36391b1b0e.js" defer></script>
+        <!-- Angular component end https://widgets.svc.dhigroupinc.com/online-presence-indicator-widget/ -->
+
+
+                </div>
+    </div>
+
+    <script type="text/javascript">
+        if (localStorage.getItem("snowplowOutQueue_snowplow_co_post2")) {
+            localStorage.removeItem('snowplowOutQueue_snowplow_co_post2')
+        }
+    </script>
+    <script defer="defer" src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script defer="defer" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+
+    <!-- include funnel envy at end based on implementation without component -->
+    <!-- end of funnel envy -->
+    <!-- include funnel envy snippet based on component at end -->
+<script defer="defer" src="https://www.dice.com/dwp-assets/web-components/dice-candidate-footer/dice-candidate-footer.wc.js"></script>
+<script async="async" src="/webfiles/1770241131432/js/dice/searchbox-control.js"></script>
+<script defer="defer" src="https://www.dice.com/dwp-assets/web-components/dice-smart-header/dice-smart-header.wc.js"></script>
+<script type="application/javascript">
+//<![CDATA[
+
+        var writeGeoLocationCookie = function () {
+            var options = {
+                // https://developers.google.com/web/fundamentals/native-hardware/user-location/
+                enableHighAccuracy: false, // recommendation
+                timeout: 30000, // ms for user to accept
+                maximumAge: 60000 // recency to use in ms
+            };
+
+            function success(data) {
+                console && console.log('geo lookup from ' + new Date(data.timestamp));
+                document.cookie = 'latlong=' + data.coords.latitude + '|' + data.coords.longitude +
+                    '; Max-Age=86400'; // 1 day in seconds
+            }
+
+            function error(err) {
+                console && console.warn();
+            }
+
+            navigator.geolocation.getCurrentPosition(success, error, options);
+            // getCurrentPosition only succeeds IF https + user permits sharing location
+        };
+    
+//]]>
+</script>
+<script async="async" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script id="google-maps-lib" type="application/javascript">
+//<![CDATA[
+
+        (function () {
+            var el = document.createElement('script');
+            el.async = true;
+            el.src = 'https://maps.googleapis.com/maps/api/js?v=3.61&libraries=places&key=AIzaSyCZHueWRfSOrIGaK8DBhqEcqUAfD4gcySw&language=en';
+            document.head.appendChild(el);
+        })();
+    
+//]]>
+</script>
+<script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" type="module"></script>
+<script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" nomodule="nomodule"></script>
+    <!-- end of include -->
+    
+    </body>
+</html>

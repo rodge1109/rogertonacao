@@ -1,0 +1,19 @@
+2026/07/21-10:42:13.172 5424 Creating DB c:\website\website-landingpage-roger\.agents\skills\job_applicant_post\browser_profile\Default\IndexedDB\https_www.upwork.com_0.indexeddb.leveldb since it was missing.
+2026/07/21-10:42:13.177 5424 Reusing MANIFEST c:\website\website-landingpage-roger\.agents\skills\job_applicant_post\browser_profile\Default\IndexedDB\https_www.upwork.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/07/21-10:42:13.317 6254 Level-0 table #5: started
+2026/07/21-10:42:13.322 6254 Level-0 table #5: 3164 bytes OK
+2026/07/21-10:42:13.324 6254 Delete type=0 #3
+2026/07/21-10:42:13.325 5424 Manual compaction at level-0 from '\x00\x02\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x03\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/07/21-10:42:14.191 5424 Level-0 table #7: started
+2026/07/21-10:42:14.197 5424 Level-0 table #7: 12311 bytes OK
+2026/07/21-10:42:14.200 5424 Delete type=0 #4
+2026/07/21-10:42:14.201 5424 Manual compaction at level-0 from '\x00\x03\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x04\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/07/21-10:42:16.012 5834 Level-0 table #9: started
+2026/07/21-10:42:16.020 5834 Level-0 table #9: 124149 bytes OK
+2026/07/21-10:42:16.023 5834 Delete type=0 #6
+2026/07/21-10:42:16.025 5424 Manual compaction at level-0 from '\x00\x04\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x05\x00\x00\x00' @ 0 : 0; will stop at '\x00\x04\x01\x03\x03\x00\x00\x00\x00\x00\x00\xf0?' @ 475 : 1
+2026/07/21-10:42:16.025 5424 Compacting 1@0 + 1@1 files
+2026/07/21-10:42:16.029 5424 Generated table #10@0: 168 keys, 88631 bytes
+2026/07/21-10:42:16.029 5424 Compacted 1@0 + 1@1 files => 88631 bytes
+2026/07/21-10:42:16.030 5424 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/07/21-10:42:16.030 5424 Manual compaction at level-0 from '\x00\x04\x01\x03\x03\x00\x00\x00\x00\x00\x00\xf0?' @ 475 : 1 .. '\x00\x05\x00\x00\x00' @ 0 : 0; will stop at (end)

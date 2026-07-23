@@ -3,6 +3,7 @@ const cors = require('cors');
 const pool = require('./db');
 const nodemailer = require('nodemailer');
 const bcrypt = require('bcryptjs');
+const { GoogleGenAI } = require('@google/genai');
 require('dotenv').config();
 
 const app = express();
@@ -1261,6 +1262,142 @@ app.post('/api/send-sms', async (req, res) => {
   } catch (error) {
     console.error('SMS send error:', error);
     res.status(500).json({ success: false, message: 'Failed to send SMS' });
+  }
+});
+
+// ==================== FACEBOOK MESSENGER AI WEBHOOK ====================
+
+const messengerSessions = new Map();
+
+// Helper: Call Gemini API to get AI response
+const processMessageWithAI = async (senderId, userMessage) => {
+  try {
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey) {
+      console.error('GEMINI_API_KEY is not configured in .env');
+      return 'Sorry, my AI brain is currently offline!';
+    }
+    
+    // Initialize AI (safely)
+    const ai = new GoogleGenAI({ apiKey: apiKey });
+    
+    // Get past conversation history for context
+    let history = messengerSessions.get(senderId) || [];
+    history.push({ role: 'user', content: userMessage });
+    
+    // Keep history reasonably small (last 10 messages)
+    if (history.length > 10) history = history.slice(-10);
+    
+    // Format history for the prompt
+    const historyText = history.map(msg => `${msg.role === 'user' ? 'Customer' : 'Kiara'}: ${msg.content}`).join('\n');
+    
+    const prompt = `You are Kiara, the friendly and warm virtual assistant for Kiara's Home Made Ice Cream in Bogo City, Cebu.
+Your goal is to answer questions about ice cream and gently guide the customer to book an ice cream reservation/order.
+Use a warm, conversational tone with emojis like 🍦, ❤️, and 🍨. Keep responses concise (1-3 short sentences).
+
+Conversation History:
+${historyText}
+
+Kiara:`;
+
+    const response = await ai.models.generateContent({
+      model: 'gemini-2.5-flash',
+      contents: prompt,
+    });
+    
+    const replyText = response.text || "I'm having trouble thinking right now!";
+    
+    // Save to history
+    history.push({ role: 'assistant', content: replyText });
+    messengerSessions.set(senderId, history);
+    
+    return replyText;
+  } catch (error) {
+    console.error('AI Error:', error);
+    return 'Oops, I encountered a brain freeze! 🍦 Please try again in a moment.';
+  }
+};
+
+// Helper: Send message back to Facebook Messenger
+const sendMessengerReply = async (senderId, messageText) => {
+  const pageToken = process.env.FB_PAGE_ACCESS_TOKEN;
+  if (!pageToken) {
+    console.error('FB_PAGE_ACCESS_TOKEN is missing in .env');
+    return;
+  }
+
+  const url = `https://graph.facebook.com/v19.0/me/messages?access_token=${pageToken}`;
+  
+  const payload = {
+    recipient: { id: senderId },
+    message: { text: messageText }
+  };
+
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    
+    const data = await response.json();
+    if (data.error) {
+      console.error('Facebook API Error:', data.error);
+    } else {
+      console.log('Successfully replied to', senderId);
+    }
+  } catch (err) {
+    console.error('Failed to send Messenger reply:', err);
+  }
+};
+
+// GET endpoint for Meta Webhook Verification
+app.get('/webhook', (req, res) => {
+  const verifyToken = process.env.FB_VERIFY_TOKEN;
+  
+  const mode = req.query['hub.mode'];
+  const token = req.query['hub.verify_token'];
+  const challenge = req.query['hub.challenge'];
+
+  if (mode && token) {
+    if (mode === 'subscribe' && token === verifyToken) {
+      console.log('WEBHOOK_VERIFIED');
+      res.status(200).send(challenge);
+    } else {
+      res.sendStatus(403);
+    }
+  } else {
+    res.sendStatus(400);
+  }
+});
+
+// POST endpoint for receiving messages
+app.post('/webhook', async (req, res) => {
+  const body = req.body;
+
+  if (body.object === 'page') {
+    // Return a '200 OK' response to all requests quickly so Facebook doesn't retry
+    res.status(200).send('EVENT_RECEIVED');
+
+    // Iterate over each entry
+    for (const entry of body.entry) {
+      // Iterate over each messaging event
+      if (entry.messaging && entry.messaging.length > 0) {
+        const webhook_event = entry.messaging[0];
+        const sender_psid = webhook_event.sender.id;
+
+        if (webhook_event.message && webhook_event.message.text) {
+          const received_text = webhook_event.message.text;
+          console.log(`Received message from ${sender_psid}: ${received_text}`);
+          
+          // Process with AI and send reply
+          const replyText = await processMessageWithAI(sender_psid, received_text);
+          await sendMessengerReply(sender_psid, replyText);
+        }
+      }
+    }
+  } else {
+    res.sendStatus(404);
   }
 });
 

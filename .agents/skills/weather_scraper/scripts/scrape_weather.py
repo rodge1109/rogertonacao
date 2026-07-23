@@ -5,8 +5,85 @@ import json
 import urllib.request
 import datetime
 import math
+import uuid
 from fpdf import FPDF
 from PIL import Image, ImageDraw, ImageFont
+
+def load_env_file():
+    possible_paths = [
+        os.path.join(os.getcwd(), ".env"),
+        os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env"),
+        os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".env"),
+        os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", ".env"),
+        os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "..", ".env"),
+        os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "..", "..", ".env")
+    ]
+    for path in possible_paths:
+        if os.path.exists(path):
+            try:
+                with open(path, "r", encoding="utf-8") as f:
+                    for line in f:
+                        line = line.strip()
+                        if line and not line.startswith("#") and "=" in line:
+                            key, val = line.split("=", 1)
+                            key = key.strip()
+                            val = val.strip().strip("'\"")
+                            os.environ[key] = val
+            except Exception:
+                pass
+
+def post_image_to_facebook(image_path, page_id, access_token, caption=""):
+    if not os.path.exists(image_path):
+        print(f"Error: Image path {image_path} does not exist.")
+        return {"success": False, "error": f"Image path {image_path} does not exist."}
+        
+    url = f"https://graph.facebook.com/v20.0/{page_id}/photos"
+    boundary = f"----WebKitFormBoundary{uuid.uuid4().hex}"
+    
+    try:
+        with open(image_path, "rb") as f:
+            file_content = f.read()
+    except Exception as e:
+        return {"success": False, "error": f"Failed to read image file: {e}"}
+        
+    filename = os.path.basename(image_path)
+    
+    body_parts = []
+    if caption:
+        body_parts.append(f"--{boundary}\r\nContent-Disposition: form-data; name=\"caption\"\r\n\r\n{caption}\r\n".encode('utf-8'))
+    body_parts.append(f"--{boundary}\r\nContent-Disposition: form-data; name=\"access_token\"\r\n\r\n{access_token}\r\n".encode('utf-8'))
+    body_parts.append(f"--{boundary}\r\nContent-Disposition: form-data; name=\"source\"; filename=\"{filename}\"\r\nContent-Type: image/png\r\n\r\n".encode('utf-8'))
+    body_parts.append(file_content)
+    body_parts.append(b"\r\n")
+    body_parts.append(f"--{boundary}--\r\n".encode('utf-8'))
+    
+    body = b"".join(body_parts)
+    
+    req = urllib.request.Request(
+        url,
+        data=body,
+        headers={
+            'Content-Type': f'multipart/form-data; boundary={boundary}',
+            'Content-Length': str(len(body))
+        },
+        method='POST'
+    )
+    
+    try:
+        with urllib.request.urlopen(req) as response:
+            res_data = response.read().decode('utf-8')
+            res_json = json.loads(res_data)
+            return {"success": True, "response": res_json}
+    except Exception as e:
+        if hasattr(e, 'read'):
+            err_data = e.read().decode('utf-8')
+            try:
+                err_json = json.loads(err_data)
+                return {"success": False, "error": err_json}
+            except Exception:
+                return {"success": False, "error": err_data}
+        else:
+            return {"success": False, "error": str(e)}
 
 NORTHERN_CEBU_KEYWORDS = [
     "bogo", "northern cebu", "medellin", "daanbantayan", "san remigio", 
@@ -571,6 +648,7 @@ def generate_pdf(forecasts, advisories, special_alerts, output_pdf, map_png=None
         return False
 
 def main():
+    load_env_file()
     url = "https://www.pagasa.dost.gov.ph/regional-forecast/visprsd"
     req = urllib.request.Request(
         url, 
@@ -683,6 +761,37 @@ def main():
     pdf_saved = generate_pdf(cebu_forecasts, advisories, special_alerts, output_pdf, map_png=output_png if map_saved else None)
     fb_saved = draw_fb_forecast_graphic(cebu_forecasts, output_fb_png)
 
+    fb_post_success = False
+    fb_post_response = None
+
+    fb_page_id = os.environ.get("FB_PAGE_ID")
+    fb_page_access_token = os.environ.get("FB_PAGE_ACCESS_TOKEN")
+
+    if not fb_page_id or not fb_page_access_token:
+        fb_post_response = "Warning: FB_PAGE_ID or FB_PAGE_ACCESS_TOKEN not found in environment. Check if .env is loaded correctly."
+    elif fb_saved:
+        update_date = today.strftime('%B %d, %Y')
+        caption = f"BOGO CITY 6-DAY WEATHER FORECAST ☀️🌧️🌩️\n"
+        caption += f"Updated: {update_date}\n\n"
+        
+        if advisories:
+            caption += "⚠️ PAHIMANGNO (Active Warnings/Advisories):\n"
+            for adv in advisories:
+                translated_adv = translate_warning_to_bisaya(adv)
+                caption += f"- {translated_adv}\n"
+            caption += "\n"
+            
+        caption += "Mag-amping kita kanunay! ❤️"
+        
+        fb_result = post_image_to_facebook(
+            image_path=output_fb_png,
+            page_id=fb_page_id,
+            access_token=fb_page_access_token,
+            caption=caption
+        )
+        fb_post_success = fb_result.get("success", False)
+        fb_post_response = fb_result.get("response") or fb_result.get("error")
+
     output_data = {
         "csv_path": output_csv,
         "csv_saved": csv_saved,
@@ -692,6 +801,8 @@ def main():
         "map_saved": map_saved,
         "fb_graphic_path": output_fb_png,
         "fb_graphic_saved": fb_saved,
+        "fb_post_success": fb_post_success,
+        "fb_post_response": fb_post_response,
         "forecasts": cebu_forecasts,
         "advisories": advisories,
         "special_alerts": special_alerts

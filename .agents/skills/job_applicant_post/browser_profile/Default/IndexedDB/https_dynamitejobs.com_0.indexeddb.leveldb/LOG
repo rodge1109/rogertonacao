@@ -1,0 +1,25 @@
+2026/07/23-09:24:22.349 4e6c Reusing MANIFEST c:\website\website-landingpage-roger\.agents\skills\job_applicant_post\browser_profile\Default\IndexedDB\https_dynamitejobs.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/07/23-09:24:22.350 4e6c Recovering log #12
+2026/07/23-09:24:22.351 4e6c Reusing old log c:\website\website-landingpage-roger\.agents\skills\job_applicant_post\browser_profile\Default\IndexedDB\https_dynamitejobs.com_0.indexeddb.leveldb/000012.log 
+2026/07/23-09:24:22.352 4e6c Delete type=2 #11
+2026/07/23-09:24:22.373 82d8 Level-0 table #17: started
+2026/07/23-09:24:22.376 82d8 Level-0 table #17: 3034 bytes OK
+2026/07/23-09:24:22.379 82d8 Delete type=0 #12
+2026/07/23-09:24:22.380 68cc Manual compaction at level-0 from '\x00\x07\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x08\x00\x00\x00' @ 0 : 0; will stop at '\x00\x07\x00\x00\x05' @ 247 : 1
+2026/07/23-09:24:22.381 68cc Compacting 1@0 + 1@1 files
+2026/07/23-09:24:22.383 68cc Generated table #18@0: 85 keys, 2372 bytes
+2026/07/23-09:24:22.384 68cc Compacted 1@0 + 1@1 files => 2372 bytes
+2026/07/23-09:24:22.384 68cc compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/07/23-09:24:22.385 68cc Delete type=2 #17
+2026/07/23-09:24:22.386 82d8 Manual compaction at level-0 from '\x00\x07\x00\x00\x05' @ 247 : 1 .. '\x00\x08\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/07/23-09:24:22.388 82d8 Level-0 table #20: started
+2026/07/23-09:24:22.393 82d8 Level-0 table #20: 663 bytes OK
+2026/07/23-09:24:22.398 82d8 Delete type=2 #14
+2026/07/23-09:24:22.398 82d8 Delete type=0 #16
+2026/07/23-09:24:22.401 68cc Manual compaction at level-0 from '\x00\x08\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x09\x00\x00\x00' @ 0 : 0; will stop at '\x00\x08\x00\x00\x05' @ 264 : 1
+2026/07/23-09:24:22.401 68cc Compacting 1@0 + 1@1 files
+2026/07/23-09:24:22.406 68cc Generated table #21@0: 85 keys, 2372 bytes
+2026/07/23-09:24:22.407 68cc Compacted 1@0 + 1@1 files => 2372 bytes
+2026/07/23-09:24:22.408 68cc compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/07/23-09:24:22.411 68cc Delete type=2 #20
+2026/07/23-09:24:22.413 68cc Manual compaction at level-0 from '\x00\x08\x00\x00\x05' @ 264 : 1 .. '\x00\x09\x00\x00\x00' @ 0 : 0; will stop at (end)

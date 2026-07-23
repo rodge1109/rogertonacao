@@ -1,0 +1,6 @@
+2026/07/22-09:38:39.105 4eb4 Creating DB c:\website\website-landingpage-roger\.agents\skills\job_applicant_post\browser_profile\Default\IndexedDB\https_913941.studiowatersolutions.com_0.indexeddb.leveldb since it was missing.
+2026/07/22-09:38:39.109 4eb4 Reusing MANIFEST c:\website\website-landingpage-roger\.agents\skills\job_applicant_post\browser_profile\Default\IndexedDB\https_913941.studiowatersolutions.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/07/22-09:38:39.114 44ec Level-0 table #5: started
+2026/07/22-09:38:39.115 44ec Level-0 table #5: 550 bytes OK
+2026/07/22-09:38:39.116 44ec Delete type=0 #3
+2026/07/22-09:38:39.117 44ec Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)

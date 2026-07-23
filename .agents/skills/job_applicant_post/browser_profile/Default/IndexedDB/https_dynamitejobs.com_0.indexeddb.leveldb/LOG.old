@@ -1,0 +1,24 @@
+2026/07/22-09:34:12.047 1a18 Reusing MANIFEST c:\website\website-landingpage-roger\.agents\skills\job_applicant_post\browser_profile\Default\IndexedDB\https_dynamitejobs.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/07/22-09:34:12.047 1a18 Recovering log #6
+2026/07/22-09:34:12.048 1a18 Reusing old log c:\website\website-landingpage-roger\.agents\skills\job_applicant_post\browser_profile\Default\IndexedDB\https_dynamitejobs.com_0.indexeddb.leveldb/000006.log 
+2026/07/22-09:34:12.053 1984 Level-0 table #10: started
+2026/07/22-09:34:12.054 1984 Level-0 table #10: 2965 bytes OK
+2026/07/22-09:34:12.055 1984 Delete type=0 #6
+2026/07/22-09:34:12.055 4b04 Manual compaction at level-0 from '\x00\x05\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x06\x00\x00\x00' @ 0 : 0; will stop at '\x00\x05\x00\x00\x05' @ 173 : 1
+2026/07/22-09:34:12.056 4b04 Compacting 1@0 + 1@1 files
+2026/07/22-09:34:12.056 4b04 Generated table #11@0: 81 keys, 2126 bytes
+2026/07/22-09:34:12.056 4b04 Compacted 1@0 + 1@1 files => 2126 bytes
+2026/07/22-09:34:12.057 4b04 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/07/22-09:34:12.057 4b04 Delete type=2 #10
+2026/07/22-09:34:12.057 4b04 Manual compaction at level-0 from '\x00\x05\x00\x00\x05' @ 173 : 1 .. '\x00\x06\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/07/22-09:34:12.058 4b04 Level-0 table #13: started
+2026/07/22-09:34:12.059 4b04 Level-0 table #13: 670 bytes OK
+2026/07/22-09:34:12.059 4b04 Delete type=2 #7
+2026/07/22-09:34:12.059 4b04 Delete type=0 #9
+2026/07/22-09:34:12.060 1a18 Manual compaction at level-0 from '\x00\x06\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x07\x00\x00\x00' @ 0 : 0; will stop at '\x00\x06\x00\x00\x05' @ 190 : 1
+2026/07/22-09:34:12.060 1a18 Compacting 1@0 + 1@1 files
+2026/07/22-09:34:12.061 1a18 Generated table #14@0: 81 keys, 2124 bytes
+2026/07/22-09:34:12.061 1a18 Compacted 1@0 + 1@1 files => 2124 bytes
+2026/07/22-09:34:12.061 1a18 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/07/22-09:34:12.061 1a18 Delete type=2 #13
+2026/07/22-09:34:12.061 1a18 Manual compaction at level-0 from '\x00\x06\x00\x00\x05' @ 190 : 1 .. '\x00\x07\x00\x00\x00' @ 0 : 0; will stop at (end)

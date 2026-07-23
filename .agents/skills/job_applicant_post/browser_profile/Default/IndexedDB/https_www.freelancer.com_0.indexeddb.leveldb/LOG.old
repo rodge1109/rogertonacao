@@ -1,0 +1,17 @@
+2026/07/22-09:35:14.727 5890 Reusing MANIFEST c:\website\website-landingpage-roger\.agents\skills\job_applicant_post\browser_profile\Default\IndexedDB\https_www.freelancer.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/07/22-09:35:14.728 5890 Recovering log #4
+2026/07/22-09:35:14.728 5890 Reusing old log c:\website\website-landingpage-roger\.agents\skills\job_applicant_post\browser_profile\Default\IndexedDB\https_www.freelancer.com_0.indexeddb.leveldb/000004.log 
+2026/07/22-09:35:15.073 305c Level-0 table #8: started
+2026/07/22-09:35:15.074 305c Level-0 table #8: 6144 bytes OK
+2026/07/22-09:35:15.076 305c Delete type=0 #4
+2026/07/22-09:35:15.076 555c Manual compaction at level-0 from '\x00\x05\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x06\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/07/22-09:35:15.087 555c Level-0 table #10: started
+2026/07/22-09:35:15.093 555c Level-0 table #10: 670 bytes OK
+2026/07/22-09:35:15.094 555c Delete type=0 #7
+2026/07/22-09:35:15.096 555c Manual compaction at level-0 from '\x00\x06\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x07\x00\x00\x00' @ 0 : 0; will stop at '\x00\x06\x00\x00\x05' @ 281 : 1
+2026/07/22-09:35:15.096 555c Compacting 1@0 + 1@1 files
+2026/07/22-09:35:15.097 555c Generated table #11@0: 75 keys, 3032 bytes
+2026/07/22-09:35:15.097 555c Compacted 1@0 + 1@1 files => 3032 bytes
+2026/07/22-09:35:15.098 555c compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/07/22-09:35:15.099 555c Delete type=2 #10
+2026/07/22-09:35:15.099 555c Manual compaction at level-0 from '\x00\x06\x00\x00\x05' @ 281 : 1 .. '\x00\x07\x00\x00\x00' @ 0 : 0; will stop at (end)

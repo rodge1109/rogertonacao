@@ -11,7 +11,7 @@ const useCart = () => {
 };
 
 // Google Sheets API URL - UPDATE THIS WITH YOUR WEB APP URL
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyQNLHXp9Fzi0_mVxYmV7M0xSA2bqteLxIDzA96nAsaIObDEAhwGN9oX1lOAoY72BaL/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwuF7QjGS098VEHEtMp9kGYi1SjZtSA9MMBCnLYAUk2OYjSStc1Vhn5VJoNwPaOiAoStw/exec';
 
 // Fallback Menu Data (used if Google Sheets fetch fails)
 const fallbackMenuData = [
@@ -609,7 +609,7 @@ function AppointmentForm() {
     email: '',
     serviceType: '',
     preferredDate: '',
-    preferredTime: '',
+    preferredTime: [],
     notes: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -631,9 +631,10 @@ function AppointmentForm() {
         const data = await response.json();
         if (data.success) {
           setAvailableSlots(data.availableSlots);
-          // Reset time if previously selected time is no longer available
-          if (formData.preferredTime && !data.availableSlots.includes(formData.preferredTime)) {
-            setFormData(prev => ({ ...prev, preferredTime: '' }));
+          // Reset time if previously selected times are no longer available
+          if (formData.preferredTime && formData.preferredTime.length > 0) {
+            const validSlots = formData.preferredTime.filter(slot => data.availableSlots.includes(slot));
+            setFormData(prev => ({ ...prev, preferredTime: validSlots }));
           }
         }
       } catch (error) {
@@ -653,35 +654,62 @@ function AppointmentForm() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  const handleTimeSlotToggle = (slot) => {
+    setFormData(prev => {
+      const currentSlots = prev.preferredTime || [];
+      if (currentSlots.includes(slot)) {
+        return { ...prev, preferredTime: currentSlots.filter(s => s !== slot) };
+      } else {
+        return { ...prev, preferredTime: [...currentSlots, slot] };
+      }
+    });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    if (!formData.preferredTime || formData.preferredTime.length === 0) {
+      setSubmitStatus({ type: 'error', message: 'Please select at least one time slot.' });
+      return;
+    }
+    
     setIsSubmitting(true);
     setSubmitStatus({ type: '', message: '' });
 
     try {
-      const response = await fetch('http://localhost:5000/api/appointments', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+      // Create a promise for each selected time slot
+      const bookingPromises = formData.preferredTime.map(timeSlot => {
+        const payload = { ...formData, preferredTime: timeSlot };
+        return fetch('http://localhost:5000/api/appointments', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(payload),
+        }).then(res => res.json());
       });
 
-      const data = await response.json();
+      const results = await Promise.all(bookingPromises);
+      const allSuccess = results.every(res => res.success);
+      const anySuccess = results.some(res => res.success);
 
-      if (data.success) {
-        setSubmitStatus({ type: 'success', message: data.message });
+      if (allSuccess) {
+        setSubmitStatus({ type: 'success', message: 'All appointments booked successfully! Confirmation emails have been sent.' });
         setFormData({
           fullName: '',
           phoneNumber: '',
           email: '',
           serviceType: '',
           preferredDate: '',
-          preferredTime: '',
+          preferredTime: [],
           notes: ''
         });
+      } else if (anySuccess) {
+        setSubmitStatus({ type: 'error', message: 'Some appointments were booked, but others failed or were already taken. Please check available slots.' });
+        // Refresh available slots
+        setFormData(prev => ({ ...prev, preferredTime: [] }));
       } else {
-        setSubmitStatus({ type: 'error', message: data.message });
+        setSubmitStatus({ type: 'error', message: results[0]?.message || 'Failed to book appointments.' });
       }
     } catch (error) {
       setSubmitStatus({ type: 'error', message: 'Failed to connect to server. Please try again.' });
@@ -784,24 +812,41 @@ function AppointmentForm() {
             />
           </div>
           <div>
-            <label className="block text-xs font-medium text-white mb-1.5">Preferred Time</label>
-            <select
-              name="preferredTime"
-              value={formData.preferredTime}
-              onChange={handleChange}
-              required
-              disabled={!formData.preferredDate || loadingSlots}
-              className="w-full px-3 py-2.5 rounded-lg border border-white/30 bg-white/10 focus:border-[#E4FE7B] focus:ring-2 focus:ring-[#E4FE7B]/30 focus:outline-none transition-all text-white text-sm disabled:opacity-50"
-            >
-              <option value="" className="bg-stone-800 text-white">
-                {!formData.preferredDate ? 'Select date first' : loadingSlots ? 'Loading...' : availableSlots.length === 0 ? 'No slots available' : 'Select a time'}
-              </option>
-              {availableSlots.map(slot => (
-                <option key={slot} value={slot} className="bg-stone-800 text-white">{slot}</option>
-              ))}
-            </select>
-            {formData.preferredDate && availableSlots.length === 0 && !loadingSlots && (
-              <p className="text-red-400 text-xs mt-1">All slots are booked for this date. Please select another date.</p>
+            <label className="block text-xs font-medium text-white mb-1.5">Preferred Time(s)</label>
+            {!formData.preferredDate ? (
+              <div className="w-full px-3 py-2.5 rounded-lg border border-white/30 bg-white/10 text-white/50 text-sm text-center">
+                Select date first
+              </div>
+            ) : loadingSlots ? (
+              <div className="w-full px-3 py-2.5 rounded-lg border border-white/30 bg-white/10 text-white/50 text-sm text-center">
+                Loading...
+              </div>
+            ) : availableSlots.length === 0 ? (
+              <div className="w-full px-3 py-2.5 rounded-lg border border-white/30 bg-white/10 text-red-400 text-sm text-center">
+                All slots are booked for this date.
+              </div>
+            ) : (
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 max-h-[160px] overflow-y-auto scrollbar-hide pr-1">
+                {availableSlots.map(slot => (
+                  <button
+                    key={slot}
+                    type="button"
+                    onClick={() => handleTimeSlotToggle(slot)}
+                    className={`px-2 py-2 rounded-lg text-xs font-medium transition-all border ${
+                      formData.preferredTime && formData.preferredTime.includes(slot)
+                        ? 'bg-[#E4FE7B] text-stone-900 border-[#E4FE7B] shadow-[0_0_10px_rgba(228,254,123,0.3)]'
+                        : 'bg-white/5 text-white border-white/20 hover:bg-white/10 hover:border-[#E4FE7B]/50'
+                    }`}
+                  >
+                    {slot}
+                  </button>
+                ))}
+              </div>
+            )}
+            {formData.preferredTime && formData.preferredTime.length > 0 && (
+              <p className="text-[#E4FE7B] text-xs mt-2">
+                Selected {formData.preferredTime.length} slot(s)
+              </p>
             )}
           </div>
         </div>
@@ -2533,6 +2578,133 @@ function Header({ currentPage, setCurrentPage, searchQuery, setSearchQuery }) {
 
 // Home Page — Apple DESIGN.md full-bleed tile system
 function HomePage({ setCurrentPage }) {
+  const [isAuditModalOpen, setIsAuditModalOpen] = React.useState(false);
+  const [isThankYouModalOpen, setIsThankYouModalOpen] = React.useState(false);
+  const [isAnalyzingModalOpen, setIsAnalyzingModalOpen] = React.useState(false);
+  const [analysisProgress, setAnalysisProgress] = React.useState(0);
+  const [auditFormData, setAuditFormData] = React.useState({
+    fullName: '',
+    businessName: '',
+    websiteUrl: '',
+    email: '',
+    phone: '',
+    challenge: ''
+  });
+  const [isSubmittingAudit, setIsSubmittingAudit] = React.useState(false);
+  
+  const [isBookingModalOpen, setIsBookingModalOpen] = React.useState(false);
+  const [bookingSuccess, setBookingSuccess] = React.useState(false);
+  const [isSubmittingBooking, setIsSubmittingBooking] = React.useState(false);
+  const [bookingFormData, setBookingFormData] = React.useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    preferredDate: '',
+    preferredTime: ''
+  });
+
+  React.useEffect(() => {
+    let interval;
+    if (isAnalyzingModalOpen && analysisProgress < 100) {
+      interval = setInterval(() => {
+        setAnalysisProgress(prev => {
+          const next = prev + (Math.random() * 8 + 4);
+          return next >= 100 ? 100 : next;
+        });
+      }, 400);
+    } else if (analysisProgress >= 100 && isAnalyzingModalOpen) {
+      const timer = setTimeout(() => {
+        setIsAnalyzingModalOpen(false);
+        setIsThankYouModalOpen(true);
+      }, 800);
+      return () => clearTimeout(timer);
+    }
+    return () => clearInterval(interval);
+  }, [isAnalyzingModalOpen, analysisProgress]);
+
+  const handleAuditSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmittingAudit(true);
+
+    // Switch to analyzing UI immediately
+    setIsAuditModalOpen(false);
+    setIsAnalyzingModalOpen(true);
+    setAnalysisProgress(0);
+
+    try {
+      const formData = new FormData();
+      formData.append('formType', 'websiteAudit');
+      formData.append('fullName', auditFormData.fullName);
+      formData.append('businessName', auditFormData.businessName);
+      formData.append('websiteUrl', auditFormData.websiteUrl);
+      formData.append('email', auditFormData.email);
+      formData.append('phone', auditFormData.phone);
+      formData.append('challenge', auditFormData.challenge);
+      formData.append('timestamp', new Date().toISOString());
+
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: formData
+      });
+
+      setIsSubmittingAudit(false);
+
+      // Reset form
+      setAuditFormData({
+        fullName: '',
+        businessName: '',
+        websiteUrl: '',
+        email: '',
+        phone: '',
+        challenge: ''
+      });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setIsSubmittingAudit(false);
+      setIsAnalyzingModalOpen(false);
+      alert('There was an error submitting your request. Please try again.');
+    }
+  };
+
+  const handleBookingSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmittingBooking(true);
+    
+    try {
+      const formData = new FormData();
+      formData.append('formType', 'bookingRequest');
+      formData.append('fullName', bookingFormData.fullName);
+      formData.append('email', bookingFormData.email);
+      formData.append('phone', bookingFormData.phone);
+      formData.append('preferredDate', bookingFormData.preferredDate);
+      formData.append('preferredTime', bookingFormData.preferredTime);
+      formData.append('timestamp', new Date().toISOString());
+
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: formData
+      });
+      
+      setIsSubmittingBooking(false);
+      setBookingSuccess(true);
+      
+      // Reset form
+      setBookingFormData({
+        fullName: '',
+        email: '',
+        phone: '',
+        preferredDate: '',
+        preferredTime: ''
+      });
+    } catch (error) {
+      console.error('Error submitting booking:', error);
+      setIsSubmittingBooking(false);
+      alert('There was an error booking your consultation. Please try again.');
+    }
+  };
+
   return (
     <div style={{ fontFamily: "'SF Pro Text', system-ui, -apple-system, BlinkMacSystemFont, sans-serif" }}>
 
@@ -2613,21 +2785,30 @@ function HomePage({ setCurrentPage }) {
             {/* Two pill CTAs */}
             <div className="flex flex-wrap justify-start gap-4">
               <button
-                onClick={() => document.getElementById('projects-section')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => setIsAuditModalOpen(true)}
                 className="btn-primary btn-apple"
               >
-                View My Work
+                Get Free Website Audit
               </button>
               <button
-                onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => setIsBookingModalOpen(true)}
                 className="btn-secondary-dark btn-apple"
               >
-                Get in Touch
+                Book a Free Consultation
               </button>
             </div>
 
 
           </div>
+        </div>
+
+        {/* Trusted by — lower right */}
+        <div
+          className="absolute bottom-8 right-6 md:right-12 z-10 animate-fadeUp animate-delay-3"
+          style={{ textAlign: 'right' }}
+        >
+          <p className="t-fine-print mb-2 uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.5)' }}>Trusted by:</p>
+          <p className="t-caption font-medium" style={{ color: 'rgba(255,255,255,0.8)' }}> BogoTika Pharmacy • Northomes Pensione • Kiaras Ice Cream • Kings Tourist Transport Services</p>
         </div>
       </section>
 
@@ -3077,7 +3258,7 @@ function HomePage({ setCurrentPage }) {
                   { label: 'Facebook', href: 'https://www.facebook.com/rodge.tonacao', icon: <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg> },
                   { label: 'Instagram', href: 'https://www.instagram.com/rod110977', icon: <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" /></svg> },
                   { label: 'X', icon: <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg> },
-                  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/roger-tonacao', icon: <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> },
+                  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/roger-tonacao', icon: <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg> },
                 ].map(social => (
                   <a
                     key={social.label}
@@ -3141,6 +3322,173 @@ function HomePage({ setCurrentPage }) {
           </div>
         </div>
       </footer>
+
+      {/* Analyzing Modal */}
+      {isAnalyzingModalOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-black/80 backdrop-blur-md"></div>
+          <div className="relative bg-[#1d1d1f] rounded-2xl shadow-2xl max-w-sm w-full p-8 animate-fadeUp text-white border border-gray-800">
+            <div className="text-center mb-8">
+              <h3 className="t-display-md mb-2" style={{ fontSize: '20px', color: '#ffffff' }}>Analyzing Your Website</h3>
+              <p className="t-caption text-gray-400 truncate">{auditFormData.websiteUrl || 'www.yourbusiness.com'}</p>
+            </div>
+
+            <div className="flex items-center justify-center gap-2 mb-4 text-sm text-blue-400">
+              <div className="w-4 h-4 border-2 border-blue-400 border-t-transparent rounded-full animate-spin"></div>
+              <span>This usually takes 5-10 seconds</span>
+            </div>
+
+            {/* Progress Bar */}
+            <div className="w-full bg-gray-800 rounded-full h-3 mb-2 overflow-hidden relative">
+              <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-blue-600 to-blue-400 rounded-full transition-all duration-300" style={{ width: `${analysisProgress}%` }}></div>
+            </div>
+            <div className="text-right text-xs text-gray-400 font-mono mb-8">{Math.floor(analysisProgress)}%</div>
+
+            {/* Checkboxes */}
+            <div className="space-y-4">
+              {[
+                { label: 'SEO Analysis', at: 10 },
+                { label: 'Page Speed', at: 30 },
+                { label: 'Mobile Friendliness', at: 50 },
+                { label: 'Security Check', at: 70 },
+                { label: 'User Experience', at: 85 },
+                { label: 'Conversion Potential', at: 95 }
+              ].map((item, idx) => (
+                <div key={idx} className={`flex items-center gap-3 transition-opacity duration-300 ${analysisProgress > item.at ? 'opacity-100' : 'opacity-40'}`}>
+                  <div className={`w-5 h-5 rounded-full flex items-center justify-center ${analysisProgress > item.at ? 'bg-green-500 text-white' : 'bg-gray-700 text-gray-500'}`}>
+                    {analysisProgress > item.at && <Check size={12} strokeWidth={3} />}
+                  </div>
+                  <span className={`text-sm font-medium ${analysisProgress > item.at ? 'text-gray-200' : 'text-gray-500'}`}>{item.label}</span>
+                </div>
+              ))}
+            </div>
+
+            <p className="text-center text-xs text-gray-500 mt-8 animate-pulse">Generating your personalized report...</p>
+          </div>
+        </div>
+      )}
+
+      {/* Lead Capture Modal */}
+      {isAuditModalOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setIsAuditModalOpen(false)}></div>
+          <div className="relative bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 animate-fadeUp overflow-y-auto max-h-[90vh]">
+            <button onClick={() => setIsAuditModalOpen(false)} className="absolute top-4 right-4 text-gray-400 hover:text-gray-800 transition-colors">
+              <X size={24} />
+            </button>
+            <div className="text-center mb-6">
+              <h3 className="t-display-md text-gray-900 mb-2" style={{ fontSize: '24px' }}>Get Your <br /><span className="text-[#0066cc]">FREE</span> Website Audit</h3>
+              <p className="t-caption text-gray-500">I'll review your website and show you how to improve your rankings, speed and conversions.</p>
+            </div>
+            <form onSubmit={handleAuditSubmit} className="space-y-4">
+              <input type="text" placeholder="Full Name" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#0066cc] focus:ring-2 focus:ring-[#0066cc]/20 outline-none transition-all t-body" value={auditFormData.fullName} onChange={e => setAuditFormData({ ...auditFormData, fullName: e.target.value })} />
+              <input type="text" placeholder="Business Name" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#0066cc] focus:ring-2 focus:ring-[#0066cc]/20 outline-none transition-all t-body" value={auditFormData.businessName} onChange={e => setAuditFormData({ ...auditFormData, businessName: e.target.value })} />
+              <input type="url" placeholder="Website / Facebook Page URL" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#0066cc] focus:ring-2 focus:ring-[#0066cc]/20 outline-none transition-all t-body" value={auditFormData.websiteUrl} onChange={e => setAuditFormData({ ...auditFormData, websiteUrl: e.target.value })} />
+              <input type="email" placeholder="Email Address" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#0066cc] focus:ring-2 focus:ring-[#0066cc]/20 outline-none transition-all t-body" value={auditFormData.email} onChange={e => setAuditFormData({ ...auditFormData, email: e.target.value })} />
+              <input type="tel" placeholder="Phone Number" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#0066cc] focus:ring-2 focus:ring-[#0066cc]/20 outline-none transition-all t-body" value={auditFormData.phone} onChange={e => setAuditFormData({ ...auditFormData, phone: e.target.value })} />
+              <select required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#0066cc] focus:ring-2 focus:ring-[#0066cc]/20 outline-none transition-all t-body bg-white text-gray-500" value={auditFormData.challenge} onChange={e => setAuditFormData({ ...auditFormData, challenge: e.target.value })}>
+                <option value="">What is your biggest business challenge?</option>
+                <option value="Need more leads/sales">Need more leads / sales</option>
+                <option value="Website is slow/outdated">Website is slow / outdated</option>
+                <option value="Not ranking on Google">Not ranking on Google</option>
+                <option value="Other">Other</option>
+              </select>
+              <button type="submit" disabled={isSubmittingAudit} className="w-full btn-primary btn-apple justify-center mt-2" style={{ padding: '14px 24px', fontSize: '17px', fontWeight: 600 }}>
+                {isSubmittingAudit ? 'Submitting...' : 'Get My Free Audit Now →'}
+              </button>
+              <p className="text-center text-xs text-gray-400 mt-4 flex items-center justify-center gap-1">
+                🔒 Your information is safe with us. No spam, ever.
+              </p>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* Thank You Modal */}
+      {isThankYouModalOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setIsThankYouModalOpen(false)}></div>
+          <div className="relative bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 text-center animate-fadeUp">
+            <button onClick={() => setIsThankYouModalOpen(false)} className="absolute top-4 right-4 text-gray-400 hover:text-gray-800 transition-colors">
+              <X size={24} />
+            </button>
+            <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+              <Check className="text-green-500" size={32} />
+            </div>
+            <h3 className="t-display-md text-gray-900 mb-2" style={{ fontSize: '24px' }}>Thank You! 🎉</h3>
+            <p className="t-body text-gray-600 mb-8">We've received your request for a FREE Website Audit.</p>
+
+            <div className="text-left bg-gray-50 rounded-xl p-5 mb-8 border border-gray-100">
+              <p className="font-semibold text-gray-900 mb-4 text-sm">Here's what happens next:</p>
+              <ul className="space-y-4 text-sm text-gray-600">
+                <li className="flex gap-3">
+                  <div className="mt-0.5 min-w-[20px]"><div className="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 text-xs font-bold">1</div></div>
+                  <span>We analyze your website (5-10 minutes)</span>
+                </li>
+                <li className="flex gap-3">
+                  <div className="mt-0.5 min-w-[20px]"><div className="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 text-xs font-bold">2</div></div>
+                  <span>You'll receive your audit report via email</span>
+                </li>
+                <li className="flex gap-3">
+                  <div className="mt-0.5 min-w-[20px]"><div className="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 text-xs font-bold">3</div></div>
+                  <span>We'll contact you to discuss the results and recommendations</span>
+                </li>
+              </ul>
+            </div>
+
+            <button onClick={() => setIsThankYouModalOpen(false)} className="w-full btn-secondary btn-apple justify-center bg-blue-50">
+              Check your email in the next few minutes.
+            </button>
+          </div>
+        </div>
+      )}
+      {/* Booking Modal */}
+      {isBookingModalOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setIsBookingModalOpen(false)}></div>
+          <div className="relative bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 animate-fadeUp overflow-y-auto max-h-[90vh]">
+            <button onClick={() => setIsBookingModalOpen(false)} className="absolute top-4 right-4 text-gray-400 hover:text-gray-800 transition-colors">
+              <X size={24} />
+            </button>
+            <div className="text-center mb-6">
+              <h3 className="t-display-md text-gray-900 mb-2" style={{ fontSize: '24px' }}>Book a <br/><span className="text-[#0066cc]">Free Consultation</span></h3>
+              <p className="t-caption text-gray-500">Pick a date and time that works best for you, and we'll discuss your goals.</p>
+            </div>
+            
+            {bookingSuccess ? (
+              <div className="text-center py-6">
+                <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                  <Check className="text-green-500" size={32} />
+                </div>
+                <h4 className="text-xl font-bold text-gray-900 mb-2">You're All Set! 🎉</h4>
+                <p className="text-gray-600 text-sm mb-6">Your consultation request has been sent. You'll receive a calendar invite shortly.</p>
+                <button onClick={() => { setIsBookingModalOpen(false); setBookingSuccess(false); }} className="btn-primary btn-apple w-full justify-center">Done</button>
+              </div>
+            ) : (
+              <form onSubmit={handleBookingSubmit} className="space-y-4">
+                <input type="text" placeholder="Full Name" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#0066cc] focus:ring-2 focus:ring-[#0066cc]/20 outline-none transition-all t-body" value={bookingFormData.fullName} onChange={e => setBookingFormData({...bookingFormData, fullName: e.target.value})} />
+                <input type="email" placeholder="Email Address" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#0066cc] focus:ring-2 focus:ring-[#0066cc]/20 outline-none transition-all t-body" value={bookingFormData.email} onChange={e => setBookingFormData({...bookingFormData, email: e.target.value})} />
+                <input type="tel" placeholder="Phone Number" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#0066cc] focus:ring-2 focus:ring-[#0066cc]/20 outline-none transition-all t-body" value={bookingFormData.phone} onChange={e => setBookingFormData({...bookingFormData, phone: e.target.value})} />
+                
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <label className="block text-xs font-semibold text-gray-500 mb-1 pl-1">Preferred Date</label>
+                    <input type="date" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#0066cc] focus:ring-2 focus:ring-[#0066cc]/20 outline-none transition-all t-body bg-white text-gray-700" value={bookingFormData.preferredDate} onChange={e => setBookingFormData({...bookingFormData, preferredDate: e.target.value})} />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-semibold text-gray-500 mb-1 pl-1">Preferred Time</label>
+                    <input type="time" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#0066cc] focus:ring-2 focus:ring-[#0066cc]/20 outline-none transition-all t-body bg-white text-gray-700" value={bookingFormData.preferredTime} onChange={e => setBookingFormData({...bookingFormData, preferredTime: e.target.value})} />
+                  </div>
+                </div>
+
+                <button type="submit" disabled={isSubmittingBooking} className="w-full btn-primary btn-apple justify-center mt-4" style={{ padding: '14px 24px', fontSize: '17px', fontWeight: 600 }}>
+                  {isSubmittingBooking ? 'Booking...' : 'Confirm Booking'}
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
+      )}
 
     </div>
   );
